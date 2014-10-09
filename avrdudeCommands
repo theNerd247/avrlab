@@ -1,0 +1,7 @@
+avr-gcc -g -Os -mmcu=atmega8 -c fileName.c
+
+avr-gcc -g -mmcu=atmega8 -o fileName.elf fileName.o
+
+avr-objcopy -j .text -j .data -O ihex fileName.elf filename.hex
+
+avrdude -c usbtiny -p atmega8 -U flash:w:fileName.hex
