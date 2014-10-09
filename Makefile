@@ -11,7 +11,7 @@ VERSION=0.1
 ## END PROJECT ############################
 #
 ## DIRS ##############################
-LAB=asn3
+LAB=lab2
 PREFIX=$(LAB)
 BINDIR=$(PREFIX)/bin
 IDIR=$(PREFIX)/include
@@ -94,7 +94,7 @@ doc:
 
 flash: all
 	$(CC) $(LFLAGS) -o $(TARGET).elf $(OBJECTS)
-	avr-objcopy -j .text -j .data -0 ihex $(TARGET).elf $(TARGET).hex
-	avrdude -c dragon_isp -p atmega328p -U flash:w:$(TARGET).hex
+	avr-objcopy -j .text -j .data -O ihex $(TARGET).elf $(TARGET).hex
+	sudo avrdude -c dragon_isp -p atmega328p -U flash:w:$(TARGET).hex
 
 ## END TARGETS ############################
