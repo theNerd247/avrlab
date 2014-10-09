@@ -1,8 +1,7 @@
 #include <stdint.h>
 #include <avr/io.h>
+#define F_CPU 100 //100 HZ
 
-#define DG1 PORTD
-#define DG2 PORTC
 #define SETDG(port,digit) port = nums[digit]
 
 //--CONSTANTS------------------------------
@@ -11,11 +10,8 @@ const uint32_t FREQ = 0;
 //7SEG IOPIN CONFIG (pins 0-6):   0   1    2    3    4    5    6     7   8    9
 const unsigned char nums[10] = {0x77,0x24,0x5d,0x6d,0x2e,0x6b,0x7b,0x25,0x7f,0x6f};
 
-/** the current digit to display */
-uint8_t curDigit; 
-
-/** the current display of digit */
-uint8_t curVal;
+/** the current number to display (0-99) */
+uint8_t curNumber; 
 
 //--END CONSTANTS---------------------------
 
@@ -55,6 +51,17 @@ void setupclk(void)
 {
 	
 }
+
+/**
+ * @brief clock interupt service routine
+ * 
+ * the digits to multiplex are 
+ *
+ * void
+ * @return void
+ * 
+ */
+void clockISR(void);
 
 int main(int argc, char const *argv[])
 {
