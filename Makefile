@@ -11,7 +11,7 @@ VERSION=0.1
 ## END PROJECT ############################
 #
 ## DIRS ##############################
-LAB=lab2
+LAB=lab3
 PREFIX=$(LAB)
 BINDIR=$(PREFIX)/bin
 IDIR=$(PREFIX)/include
