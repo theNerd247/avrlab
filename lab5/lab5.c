@@ -82,6 +82,22 @@ ISR(TIMER2_COMPA_vect)
 	/*TIFR2 = 0x02;*/
 }
 
+ISR(ADC_vect)
+{
+	uint8_t temp;
+	uint16_t adc;
+
+	/** ADC value*/
+	adc = ADCL;
+	adc |= (ADCH << 8);
+
+	/** convert ADC value to temperature */
+	temp = -0.001688(R1*(1024/adc-1))+41.995;
+
+	/** display the Number*/
+	setNum(temp);
+}
+
 #ifndef MODE1
 /**
  * @brief sets up the timer
@@ -117,10 +133,6 @@ void setupclk(void)
 
 	/** enable interrupt */
 	BITON(TIMSK2,OCIE2A);
-}
-
-void setupadc(void)
-{
 }
 #endif
 
