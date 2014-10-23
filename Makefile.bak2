@@ -1,0 +1,10 @@
+src=lab2.c 
+
+all:
+	avr-gcc -g -Os -mmcu=atmega328p -c lab2.c
+	
+	avr-gcc -g -mmcu=atmega328p -o lab2.elf lab2.o
+	
+	avr-objcopy -j .text -j .data -O ihex lab2.elf lab2.hex
+	
+	avrdude -c dragon_isp -p atmega328p -U flash:w:lab2.hex
