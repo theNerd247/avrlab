@@ -121,6 +121,24 @@ void setupclk(void)
 
 void setupadc(void)
 {
+	// Vref external
+	ADMUX |= (1<<6);
+	
+	// Read from ADC5
+	ADMUX |= (1<<0);
+	ADMUX |= (1<<2);
+
+	// Enable ADC
+	ADCSRA |= (1<<7);
+	
+	// Enable ADC interrupt
+	ADCSRA |= (1<<3);
+	
+	// Enable auto trigger
+	ADCSRA |= (1<<5);
+	
+	// Start free-running conversions
+	ADCSRA |= (1>>6);
 }
 #endif
 
@@ -142,6 +160,7 @@ int main(int argc, char const *argv[])
 	#ifndef MODE1
 	sei();
 	setupclk();
+	setupadc();
 	#endif
 
 	while(1)
