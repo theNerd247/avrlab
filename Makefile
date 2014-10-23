@@ -7,14 +7,15 @@
 SHELL=/bin/sh
 PROJECT=mechlab
 VERSION=0.1
+MCUTYPE=atmega328p
 
 ## END PROJECT ############################
 #
 ## DIRS ##############################
-LAB=lab3
+LAB=lab4
 PREFIX=$(LAB)
 BINDIR=$(PREFIX)/bin
-IDIR=$(PREFIX)/include
+IDIR=./include
 SRCDIR=$(PREFIX)
 LIBDIR=$(PREFIX)/lib
 CLEAN=$(LIBDIR) 
@@ -36,10 +37,10 @@ LLIBS:=$(patsubst %, -l%, $(LLIBS))
 export CC=avr-gcc
 
 #compile flags
-export CFLAGS=-Wall -g -Os -mmcu=atmega328p
+export CFLAGS=-Wall -g -Os -mmcu=$(MCUTYPE) -I$(IDIR)
 
 #link flags
-export LFLAGS=-g -mmcu=atmega328p
+export LFLAGS=-g -mmcu=$(MCUTYPE) 
 
 SOFLAGS=-shared
 
@@ -59,7 +60,7 @@ OBJECTS:=$(filter-out $(LIBOBJECTS), $(OBJS))
 #
 ## TARGETS ##############################
 	
-TARGET=$(BINDIR)/$(PROJECT).hex
+TARGET=$(BINDIR)/$(PROJECT)
 
 .PHONY: all setup clean package doc
 
@@ -78,14 +79,15 @@ $(LIBTARGET): $(LIBOBJECTS)
 	$(CC) -o $(LIBTARGET) $(LIBOBJECTS) $(SOFLAGS) $(LFLAGS)
 
 $(TARGET): $(OBJECTS)
-	$(CC) -o $@ $(OBJECTS) $(LFLAGS) 
+	$(CC) $(LFLAGS) -o $(TARGET).elf $(OBJECTS)
+	avr-objcopy -j .text -j .data -O ihex $(TARGET).elf $(TARGET).hex
 
 #perform a recursive build 
 #build: $(SUBDIRS)
 
 #perform a recursive clean
 #clean: $(SUBDIRS)
-clean: CLEAN += $(OBJECTS) $(LIBOBJECTS)
+clean: CLEAN += $(OBJECTS) 
 clean: 
 	rm -rf $(CLEAN)
 
@@ -93,8 +95,12 @@ doc:
 	doxygen $(DOXYGEN_CONFIG_FILE)
 
 flash: all
-	$(CC) $(LFLAGS) -o $(TARGET).elf $(OBJECTS)
-	avr-objcopy -j .text -j .data -O ihex $(TARGET).elf $(TARGET).hex
-	sudo avrdude -c dragon_isp -p atmega328p -U flash:w:$(TARGET).hex
+	sudo avrdude -c dragon_isp -p $(MCUTYPE) -U flash:w:$(TARGET).hex
 
+sim: all
+	simulavr -g -d atmega328 -F 8 &
+	avr-gdb -f $(TARGET).elf
+
+pdf: 
+	cd $(PREFIX); pdflatex ./$(LAB).tex
 ## END TARGETS ############################

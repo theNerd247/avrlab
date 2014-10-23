@@ -4,6 +4,8 @@
 
 #include <util/delay.h>
 
+#include "util.h"
+
 /** the digit value port to use */
 #define DGOUTPORT PORTD
 
@@ -15,10 +17,6 @@
 
 /** turns on the requested digit */
 #define DGSEL(v) DGSELPORT = digits[v]
-
-#define BITON(port,pin) port |= (1<<pin)
-#define BITOFF(port,pin) port &= ~(1<<pin)
-#define SETPORT(port,mask,value) port = ((port & ~(mask)) | value)
 
 //--CONSTANTS------------------------------
 //7SEG IOPIN CONFIG (pins 0-6):   0   1    2    3    4    5    6     7   8    9
@@ -67,8 +65,8 @@ void setNum(uint8_t num)
  * @return void
  * 
  */
-/*ISR(TIMER2_COMPA_vect)*/
-void clockISR(void)
+/*void clockISR(void)*/
+ISR(TIMER2_COMPA_vect)
 {
 	//quickly turn off the digits before switching 
 	DGSELPORT = 0x00;
@@ -102,17 +100,17 @@ void setupclk(void)
 	BITOFF(TCCR2A,COM2A0);
 
 	/** set the operation mode to CTC */
-	BITON(TCCR2A,WGM21);
+	BITON(TCCR2A,WGM21); 
 	BITOFF(TCCR2A,WGM20);
 
 	/** make sure we use the internal clock */
 	BITOFF(ASSR,AS2);
 
 	/** setup prescaler to 8*/
-	SETPORT(TCCR2B,0x0F,CS21);
+	SETPORT(TCCR2B,0x0F, _BV(CS21));
 
 	/** set output compare */
-	SETPORT(OCR2A,0xFF,100);
+	SETPORT(OCR2A,0xFF,19);
 
 	/** set counter */
 	SETPORT(TCNT2,0xff,0);
@@ -124,8 +122,8 @@ void setupclk(void)
 
 int main(int argc, char const *argv[])
 {
-	DDRD = 0xff;
-	DDRC = 0x3;
+	SETPORT(DDRD,0xff,0xff);
+	SETPORT(DDRC,0x2,0x3);
 
 	uint8_t cnt = 0;
 	uint8_t cnt2 = 0;
@@ -138,6 +136,7 @@ int main(int argc, char const *argv[])
 	SETDG(digit_cfg.dval[digit_cfg.dsel]);
 
 	#ifndef MODE1
+	sei();
 	setupclk();
 	#endif
 
@@ -158,6 +157,7 @@ int main(int argc, char const *argv[])
 		if(cnt == 100)
 			cnt = 0;
 		setNum(cnt++);
+		_delay_ms(250);
 	#endif
 	}
 
