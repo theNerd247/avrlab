@@ -12,7 +12,7 @@ MCUTYPE=atmega328p
 ## END PROJECT ############################
 #
 ## DIRS ##############################
-LAB=lab4
+LAB=lab5
 PREFIX=$(LAB)
 BINDIR=$(PREFIX)/bin
 IDIR=./include

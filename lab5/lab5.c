@@ -19,6 +19,7 @@
 #define DGSEL(v) DGSELPORT = digits[v]
 
 //--CONSTANTS------------------------------
+#define R1 10000 /** reference resistance */
 //7SEG IOPIN CONFIG (pins 0-6):   0   1    2    3    4    5    6     7   8    9
 const unsigned char nums[10] = {0x77,0x24,0x5d,0x6d,0x2e,0x6b,0x7b,0x25,0x7f,0x6f};
 
@@ -39,6 +40,10 @@ digit_cfg_t digit_cfg;
 
 //--END CONSTANTS---------------------------
 
+//--GLOBALS------------------------------
+uint16_t adc; /** the ADC output value */
+//--END GLOBALS---------------------------
+
 /**
  * @brief sets the iopins for the 7SEG display
  * 
@@ -54,6 +59,62 @@ void setNum(uint8_t num)
 
 	digit_cfg.dval[DG1] = num%10;
 	digit_cfg.dval[DG2] = num/10;
+}
+
+uint8_t ind = 0;
+static const uint16_t tempData[][2] =
+{
+	{241,0},
+	{343,10},
+	{445,20},
+	{567,30},
+	{668,40},
+	{753,50},
+	{871,60},
+	{910,70},
+	{938,80}
+};
+
+#define U tempData[ind]
+#define L tempData[ind-1]
+/**
+ * @brief gets the input temperature from the adc value
+ * 
+ * raw is linearly interpollated via the below table: 
+ * **NOTE:** This function is an inline function and is meant to be used in an
+ * ISR
+ *
+ *  ADC | Temp (degrees C)
+ * -----|------------------
+ *  241 | 10
+ *  343 | 20
+ *  445 | 30
+ *  567 | 40
+ *  668 | 50
+ *  753 | 60
+ *  871 | 70
+ *  910 | 80
+ *  938 | 90
+ *
+ * @param raw - the raw ADC value (should be read directly from the ADCH/L
+ * registers)
+ *
+ * @return void
+ * 
+ */
+inline void setTemp(uint16_t raw)
+{
+	ind = 0;
+	//get the upper bound of the temperature
+	while(ind < 7 && raw > tempData[ind][0])
+		ind++;
+
+	//do a nearest linear interpolation
+	if(ind == 0)
+		/*setNum(89);*/
+		setNum(tempData[ind][1]/tempData[ind][0]*raw);
+	else
+		setNum((U[1]-L[1])*(raw-L[0])/(U[0]-L[0])+L[1]);
 }
 
 /**
@@ -84,18 +145,11 @@ ISR(TIMER2_COMPA_vect)
 
 ISR(ADC_vect)
 {
-	uint8_t temp;
-	uint16_t adc;
-
-	/** ADC value*/
+	/** get ADC value*/
 	adc = ADCL;
 	adc |= (ADCH << 8);
 
-	/** convert ADC value to temperature */
-	temp = -0.001688(R1*(1024/adc-1))+41.995;
-
-	/** display the Number*/
-	setNum(temp);
+	setTemp(adc);
 }
 
 #ifndef MODE1
@@ -144,17 +198,22 @@ void setupadc(void)
 	ADMUX |= (1<<0);
 	ADMUX |= (1<<2);
 
-	// Enable ADC
-	ADCSRA |= (1<<7);
-	
+	BITOFF(ADMUX,ADLAR);
+
+	BITOFF(PRR,PRADC);
+
 	// Enable ADC interrupt
 	ADCSRA |= (1<<3);
 	
 	// Enable auto trigger
 	ADCSRA |= (1<<5);
+
+	// Enable ADC
+	ADCSRA |= (1<<7);
 	
 	// Start free-running conversions
-	ADCSRA |= (1>>6);
+	ADCSRA |= (1<<6);
+
 }
 #endif
 
@@ -163,9 +222,6 @@ int main(int argc, char const *argv[])
 	SETPORT(DDRD,0xff,0xff);
 	SETPORT(DDRC,0x2,0x3);
 
-	uint8_t cnt = 0;
-	uint8_t cnt2 = 0;
-	
 	digit_cfg.dsel = DG1;
 	digit_cfg.dval[DG1] = 0;
 	digit_cfg.dval[DG2] = 0;
@@ -173,32 +229,11 @@ int main(int argc, char const *argv[])
 	DGSEL(digit_cfg.dsel);
 	SETDG(digit_cfg.dval[digit_cfg.dsel]);
 
-	#ifndef MODE1
 	sei();
-	setupclk();
 	setupadc();
-	#endif
+	setupclk();
 
-	while(1)
-	{
-	#ifdef MODE1
-		clockISR();
-		_delay_ms(10);
-		if(cnt2 == 50)
-		{
-			if(cnt == 100)
-				cnt = 0;
-			setNum(cnt++);
-			cnt2 = 0;
-		}
-		cnt2++;
-	#else
-		if(cnt == 100)
-			cnt = 0;
-		setNum(cnt++);
-		_delay_ms(250);
-	#endif
-	}
+	while(1);
 
 	return 0;
 }
