@@ -1,0 +1,22 @@
+outline:
+Objectives of report: To create a basic thermometer using Atmel328p
+
+Methodology: Thermistor -> MCU -> 7 SEG
+Program Method: 2 Interrupts with linear interpolation
+
+Results: Working resistor tested range between 0-30 deg. cel. 
+
+Analog to digital converters (or ADC) are electrical devices that convert from
+an analog input voltage to a digital n-bit number. Many digital thermometers use
+a thermistor (a resistor in which the resistance is a function of temperature)
+and an ADC to display the temperature (using a digital display) of the
+surrounding environment. This project seeks to investigate a method of creating
+a thermometer using a thermistor, microcontroller, and a two-digit seven segment
+display.
+
+An AVR Atmel328p microcontroller was used as the logic control unit to interface
+the thermistor to the seven segment display. The program that controls the
+microcontroller uses interrupts to convert the input voltage from the thermistor
+to the value that is displayed. Linear interpolation was used as the method to
+compute the temperature "read" by the thermistor. The working assembly of this
+project worked using the 

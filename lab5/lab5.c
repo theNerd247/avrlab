@@ -21,10 +21,11 @@
 //--CONSTANTS------------------------------
 #define R1 10000 /** reference resistance */
 //7SEG IOPIN CONFIG (pins 0-6):   0   1    2    3    4    5    6     7   8    9
-const unsigned char nums[10] = {0x77,0x24,0x5d,0x6d,0x2e,0x6b,0x7b,0x25,0x7f,0x6f};
+/*const unsigned char nums[10] = {0x77,0x24,0x5d,0x6d,0x2e,0x6b,0x7b,0x25,0x7f,0x6f};*/
+const unsigned char nums[10] = {0b00010001,0b11011011,0b10100000,0b11010000,0b01011010,0b01010100,0b00010100,0b11011001,0b00010000,0b01010000};
 
 //pins to set the digit to use   DG2   DG1
-const unsigned char digits[2] = {0x01,0x02};
+const unsigned char digits[2] = {_BV(5),_BV(4)};
 
 /** the digit to index mapping */
 #define DG1 1
@@ -192,11 +193,11 @@ void setupclk(void)
 void setupadc(void)
 {
 	// Vref external
-	ADMUX |= (1<<6);
+	BITON(ADMUX,REFS0);
 	
 	// Read from ADC5
-	ADMUX |= (1<<0);
-	ADMUX |= (1<<2);
+	BITON(ADMUX,MUX0);
+	BITON(ADMUX,MUX1);
 
 	BITOFF(ADMUX,ADLAR);
 
