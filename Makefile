@@ -62,7 +62,7 @@ OBJECTS:=$(filter-out $(LIBOBJECTS), $(OBJS))
 	
 TARGET=$(BINDIR)/$(PROJECT)
 
-.PHONY: all setup clean package doc
+.PHONY: all setup clean package doc report pdf
 
 all: setup $(TARGET)
 
@@ -101,6 +101,12 @@ sim: all
 	simulavr -g -d atmega328 -F 8 &
 	avr-gdb -f $(TARGET).elf
 
+report: 
+	cd ./report/; \
+		pdflatex main.tex; \
+		mv main.pdf lab5.pdf
+
 pdf: 
 	cd $(PREFIX); pdflatex ./$(LAB).tex
+
 ## END TARGETS ############################
