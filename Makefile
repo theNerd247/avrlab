@@ -102,6 +102,7 @@ sim: all
 	avr-gdb -f $(TARGET).elf
 
 report: 
+	gnuplot ./adcTemp.gp
 	cd ./report/; \
 		pdflatex main.tex; \
 		mv main.pdf lab5.pdf

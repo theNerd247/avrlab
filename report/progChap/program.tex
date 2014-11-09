@@ -124,16 +124,40 @@
 		data first (which is required according to the Atmega328p datasheet) and
 		then the \lstinline{ADCH} register data. The final result is stored in a
 		sixteen bit integer (noted as the ADC value) which is then passed to a
-		temperature conversion function \lstinline{setTemp()}.  \figref{tempConvIfc}
+		temperature conversion function \lstinline{setTemp()}. \figref{tempConvIfc}
 		shows the process in which the temperature conversion interface was
 		designed.
 
 		\subsection{Calculating the Temperature}
 		%TODO: finish this section
 		A function called \lstinline{setTemp()} handles the conversion of an ADC
-		value to a temperature and the display of the resulting conversion. Linear
-		interpolation is used (see the ADC to Temperature Math section of the
-		introduction) to convert the given ADC value to an estimated temperature.
-		\lstinline{setNum()} is then called to display the resulting temperature.
+		value to a temperature. Below is the process for which
+		\lstinline{setTemp()} uses to convert and ADC value. 
+	
+		\begin{enumerate}
+			\item Fetch nearest data points from Temperature conversion table.
+			\item Perform linear interpolation using integer math to compute a
+				temperature.
+			\item call \lstinline{setNum()} to display the result to the seven segment
+				display.
+		\end{enumerate}	
+
+		\subsection{Linear Interpolation}
+		Linear interpolation is a method of estimating function values from a table
+		of known input and function values. The idea is that two points are chosen
+		from the table (one greater than, one less than the desired value) and a
+		linear equation is formed from those two points. Then the desired function value is
+		found by `plugging in' a given input value into this function.
+
+		%include graph of data
+		\begin{figure}[H]
+			\begin{center}
+				\subfile{figures/adcTempGraph.tex}
+			\end{center}
+			\caption{Sample ADC value to Temperature Table}
+			\label{gph:adcTempGraph}
+		\end{figure}
+
+		\gphref{adcTempGraph} shows an exmpale of a linear interpolation.
 
 \end{document}
