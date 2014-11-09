@@ -7,11 +7,17 @@
 
 \documentclass[main.tex]{subfiles}
 \begin{abstract}
-	
-%TODO: finish abstract
-Analog to digital converters are electrical devices that convert an analog input
-voltage to a digital n-bit number. An elementary thermometer can be created
-using an ADC, Atmel328p microcontroller, thermistor, and a seven segment display.
 
+A thermometer is a device used to measure and display the temperature of an
+external environment. A typical thermometer can be created using a Atmega328p
+microcontroller, thermistor and seven segment display. The main challenge in
+this design is measuring and storing the temperature in the microcontroller. A
+ten-bit analog-to-digital converter (ADC) in the Atmega328p can be used to
+overcome this challenge. Temperature is converted to an analog voltage signal
+by the thermistor which is then converted to a binary number by the ADC and is
+stored in the Atmega328p. Linear interpolation is then performed on this number
+to obtain a temperature value which is then displayed via a two digit seven
+segment display. Testing of this method showed that the thermometer worked for
+temperatures ranging from zero to forty degrees Celsius.
 \end{abstract}
 

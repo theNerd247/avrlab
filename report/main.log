@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.21)  6 NOV 2014 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.21)  9 NOV 2014 05:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -170,44 +170,84 @@ Package refstyle Info: \Figref created on input line 18.
 Package refstyle Info: \figrangeref created on input line 18.
 Package refstyle Info: \Figrangeref created on input line 18.
 Package refstyle Info: \figpageref created on input line 18.
-Package refstyle Info: New reference template \newref{tbl} on input line 19.
-Package refstyle Info: \tblkey created on input line 19.
-Package refstyle Info: \tbllabel created on input line 19.
-Package refstyle Info: \tblref created on input line 19.
-Package refstyle Info: \Tblref created on input line 19.
-Package refstyle Info: \tblrangeref created on input line 19.
-Package refstyle Info: \Tblrangeref created on input line 19.
-Package refstyle Info: \tblpageref created on input line 19.
- (./main.aux)
+Package refstyle Info: Reference template \newref{tab} redefined on input line 
+19.
+Package refstyle Info: \tabkey created on input line 19.
+Package refstyle Info: \tablabel created on input line 19.
+Package refstyle Info: \tabref created on input line 19.
+Package refstyle Info: \Tabref created on input line 19.
+Package refstyle Info: \tabrangeref created on input line 19.
+Package refstyle Info: \Tabrangeref created on input line 19.
+Package refstyle Info: \tabpageref created on input line 19.
+
+(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2014/05/13 v2.10 `tabularx' package (DPC)
+
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen109
+\extrarowheight=\dimen110
+\NC@list=\toks20
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen111
+\TX@old@table=\dimen112
+\TX@old@col=\dimen113
+\TX@target=\dimen114
+\TX@delta=\dimen115
+\TX@cols=\count98
+\TX@ftn=\toks21
+)
+(/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen116
+\lightrulewidth=\dimen117
+\cmidrulewidth=\dimen118
+\belowrulesep=\dimen119
+\belowbottomsep=\dimen120
+\aboverulesep=\dimen121
+\abovetopsep=\dimen122
+\cmidrulesep=\dimen123
+\cmidrulekern=\dimen124
+\defaultaddspace=\dimen125
+\@cmidla=\count99
+\@cmidlb=\count100
+\@aboverulesep=\dimen126
+\@belowrulesep=\dimen127
+\@thisruleclass=\count101
+\@lastruleclass=\count102
+\@thisrulewidth=\dimen128
+) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-\c@lstlisting=\count98
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+\c@lstlisting=\count103
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen109
+\scratchcounter=\count104
+\scratchdimen=\dimen129
 \scratchbox=\box30
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen110
-\MPnumerator=\count103
-\makeMPintoPDFobject=\count104
-\everyMPtoPDFconversion=\toks21
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen130
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -257,54 +297,62 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 24.
+(Font)              <12> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 24.
+(Font)              <8> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 24.
+(Font)              <6> on input line 27.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./abstract.tex [1])
 (./progChap/program.tex
 Chapter 1.
-<./figures/ProgramLogic.jpg, id=13, 734.745pt x 277.035pt>
+<./figures/ProgramLogic.jpg, id=13, 590.205pt x 200.75pt>
 File: ./figures/ProgramLogic.jpg Graphic file (type jpg)
 
 <use ./figures/ProgramLogic.jpg>
-Package pdftex.def Info: ./figures/ProgramLogic.jpg used on input line 24.
-(pdftex.def)             Requested size: 345.0pt x 130.08388pt.
+Package pdftex.def Info: ./figures/ProgramLogic.jpg used on input line 18.
+(pdftex.def)             Requested size: 345.0pt x 117.3479pt.
  [1
 
  <./figures/ProgramLogic.jpg>]
-<./figures/adc.jpg, id=18, 457.71pt x 262.9825pt>
+<./figures/display.jpg, id=18, 523.9575pt x 429.605pt>
+File: ./figures/display.jpg Graphic file (type jpg)
+
+<use ./figures/display.jpg>
+Package pdftex.def Info: ./figures/display.jpg used on input line 59.
+(pdftex.def)             Requested size: 345.0pt x 282.87808pt.
+ [2] [3 <./figures/display.jpg>]
+<./figures/adc.jpg, id=25, 490.83376pt x 227.85126pt>
 File: ./figures/adc.jpg Graphic file (type jpg)
  <use ./figures/adc.jpg>
-Package pdftex.def Info: ./figures/adc.jpg used on input line 44.
-(pdftex.def)             Requested size: 345.0pt x 198.23154pt.
+Package pdftex.def Info: ./figures/adc.jpg used on input line 106.
+(pdftex.def)             Requested size: 345.0pt x 160.15884pt.
 
-[2 <./figures/adc.jpg>]
-Overfull \hbox (11.98036pt too wide) in paragraph at lines 82--82
-[]\OT1/cmr/bx/n/12 Obtaining the ADC Con-ver-sion Re-sult (or ADC value) 
- []
+<./figures/adcFlow.jpg, id=26, 551.05875pt x 271.0125pt>
+File: ./figures/adcFlow.jpg Graphic file (type jpg)
 
-) [3] (./main.aux) ) 
+<use ./figures/adcFlow.jpg>
+Package pdftex.def Info: ./figures/adcFlow.jpg used on input line 115.
+(pdftex.def)             Requested size: 345.0pt x 169.68013pt.
+ [4 <./figures/adc.jpg>]) [5 <./figures/adcFlow.jpg>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3347 strings out of 493108
- 47666 string characters out of 6140725
- 115333 words of memory out of 5000000
- 6783 multiletter control sequences out of 15000+600000
+ 3465 strings out of 493108
+ 49103 string characters out of 6140725
+ 117348 words of memory out of 5000000
+ 6891 multiletter control sequences out of 15000+600000
  8808 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,6n,32p,245b,909s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
-0.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (5 pages, 168439 bytes).
+ 38i,9n,32p,243b,913s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on main.pdf (7 pages, 153491 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 52 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

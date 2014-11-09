@@ -10,13 +10,16 @@
 % needed for images
 \usepackage{graphicx}
 % all images should be placed in figures/
-\graphicspath{ {./figures/} }
+\graphicspath{{./figures/}}
 % enable more control of floats
 \usepackage{float}
 % custom reference styles
 \usepackage{refstyle}
 \newref{fig}{refcmd={Figure \ref{#1}}}
-\newref{tbl}{refcmd={Table \ref{#1}}}
+\newref{tab}{refcmd={Table \ref{#1}}}
+% use good tables
+\usepackage{tabularx}
+\usepackage{booktabs}
 
 \begin{document}
 	\title{Basic Analog to Digital Thermometer using Atmega328p}

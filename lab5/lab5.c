@@ -18,28 +18,30 @@
 /** turns on the requested digit */
 #define DGSEL(v) DGSELPORT = digits[v]
 
-//--CONSTANTS------------------------------
-#define R1 10000 /** reference resistance */
+//--GLOBALS------------------------------
 //7SEG IOPIN CONFIG (pins 0-6):   0   1    2    3    4    5    6     7   8    9
-/*const unsigned char nums[10] = {0x77,0x24,0x5d,0x6d,0x2e,0x6b,0x7b,0x25,0x7f,0x6f};*/
-const unsigned char nums[10] = {0b00010001,0b11011011,0b10100000,0b11010000,0b01011010,0b01010100,0b00010100,0b11011001,0b00010000,0b01010000};
+const unsigned char nums[10] = {0x77,0x24,0x5d,0x6d,0x2e,0x6b,0x7b,0x25,0x7f,0x6f};
 
 //pins to set the digit to use   DG2   DG1
-const unsigned char digits[2] = {_BV(5),_BV(4)};
+const unsigned char digits[2] = {_BV(0),_BV(1)};
 
-/** the digit to index mapping */
+/** the digit to digits[] index mapping */
 #define DG1 1
 #define DG2 0
 
-/** the current number to display (0-99) */
+/** display config */
 typedef struct
 {
+	/** the current digit to display */
 	uint8_t dsel:1;
+	/** @brief digit values to display
+	 *
+	 * stored as indexes to nums[] for their respective values (0-9)
+	 */
 	uint8_t dval[2];
 } digit_cfg_t;
 digit_cfg_t digit_cfg;
-
-//--END CONSTANTS---------------------------
+//--END GLOBALS---------------------------
 
 //--GLOBALS------------------------------
 uint16_t adc; /** the ADC output value */
@@ -153,7 +155,6 @@ ISR(ADC_vect)
 	setTemp(adc);
 }
 
-#ifndef MODE1
 /**
  * @brief sets up the timer
  * 
@@ -204,31 +205,27 @@ void setupadc(void)
 	BITOFF(PRR,PRADC);
 
 	// Enable ADC interrupt
-	ADCSRA |= (1<<3);
+	BITON(ADSCRA,_BV(3));
 	
 	// Enable auto trigger
-	ADCSRA |= (1<<5);
+	BITON(ADSCRA,_BV(5));
 
 	// Enable ADC
-	ADCSRA |= (1<<7);
+	BITON(ADSCRA,_BV(7));
 	
 	// Start free-running conversions
-	ADCSRA |= (1<<6);
+	BITON(ADSCRA,_BV(6));
 
 }
-#endif
 
 int main(int argc, char const *argv[])
 {
+	//set io port directions
 	SETPORT(DDRD,0xff,0xff);
 	SETPORT(DDRC,0x2,0x3);
 
 	digit_cfg.dsel = DG1;
-	digit_cfg.dval[DG1] = 0;
-	digit_cfg.dval[DG2] = 0;
-
-	DGSEL(digit_cfg.dsel);
-	SETDG(digit_cfg.dval[digit_cfg.dsel]);
+	setNum(0);
 
 	sei();
 	setupadc();

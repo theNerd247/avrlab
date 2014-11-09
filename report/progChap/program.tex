@@ -1,23 +1,17 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
-
+%TODO: remove active voice and replace with passive?
 \chapter{Program Logic} 
 	\section{Overview}
-	This project used the AVR version of the C programming language (ANSI C with
-	binary number support). The AVR development suite (avr-dude, avr-gcc, etc) was
-	used to compile and download the program to the microcontroller. 
-	
-	The Atmega328p application program uses two interrupts to control the external
-	display and temperature conversion tasks of the program asynchronously. An
-	eight bit timer and ten bit analog to digital converter are used to control
-	the execution of the above interrupts. 
-	
-	\figref{progLogic} shows a flow diagram of the program logic. The Atmega328p
-	ADC and Timer control the execution of their respective interrupt service
-	routines (or ISR). The ADC ISR handles the conversion of ADC conversion values
-	(ADC values) to temperature via \lstinline{setTemp()} which intern displays
-	the result via \lstinline{setNum()}. The Timer ISR handles setting the seven
-	segment display output.
+	The Atmega328p application program uses two processes to asynchronously
+	control the external display and temperature conversion tasks (as shown in
+	\figref{progLogic}).	Temperature calculations are handled by the ADC
+	interrupt service routine (or ADC ISR). The ADC ISR obtains the result from
+	the ADC and calls \lstinline{setTemp()} to handle temperature calculations.
+	An eight-bit timer on the Atmega328p is used to manage the seven segment
+	display.  Multiplexing is used to display a value on the and the
+	\lstinline{setNum()} function is the application interface to set the number
+	to display. 
 	
 	\begin{figure}[H]
 		\begin{center}
@@ -27,69 +21,115 @@
 		\label{fig:progLogic}
 	\end{figure}
 
-	\section{ADC and Timer Overview}
+	\section{Configuration}
+		\subsection{Timer Configuration}
+		The eight-bit timer is configured to run at approximately fifty-two kilohertz
+		in Clear Timer on Compare mode. CTC mode is an operation mode of the timer in
+		which the internal counter is reset when the counter matches the value stored
+		in the timer's output compare register. Once the timer is reset a timer
+		interrupt vector flag is set and the timer ISR is called to handle the display.
+
+		\subsection{ADC Configuration}
+		The ADC is configured to run in Free running mode. This is an operation mode
+		in which the ADC is constantly performing conversions. Once a conversion is
+		performed an ADC flag is set and an interrupt is called and the ADC
+		immediately begins performing another conversion. The ADC uses the
+		\lstinline{ADC5} port as the voltage signal input. 
+
+		\subsection{IO Register Configuration}
+		\tabref{pinConfig} shows a table of specific ports and their
+		respective pin configurations.
+
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabularx}{\textwidth}{llX} 
+					Port & Pins & Configuration \\ \hline \hline
+					PORTD & 0-7 & Output pins to control segment LEDs on seven-segment display. \\ \hline
+					PORTC & 0-1 & Output pins to control digit selection on seven segment	display. \\ \hline
+					PORTC & 5 & Input pin for ADC 
+				\end{tabularx}
+				\caption{Atmega328p Pin Configurations}
+				\label{tab:pinConfig}
+			\end{center}
+		\end{table}
+	
+	\section{Two Digit Display}
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[width=\linewidth]{display.jpg}
+			\end{center}
+			\caption{Two Digit Display Interface}
+			\label{fig:twoDigitIfc}
+		\end{figure}
+		\subsection{Single Digit Control}
+
+		The two digit seven segment display is controlled by the Atmega328p via two
+		I/O ports. \lstinline{PORTD} controls the segments on the display and
+		\lstinline{PORTC} controls the digit selection. A mapping array is used to
+		map digits 0 through 9 to their respective output register values. For
+		example, the value at index 3 in the mapping array stores the respective
+		value for the \lstinline{PORTD} register. This register value is then used
+		to show the number 3 on the seven segment display. Two variables store
+		indexes to this mapping array, each for a single digit on the display. These
+		variables are set by the \lstinline{setNum()} function and are used by the
+		timer ISR to set the \lstinline{PORTD} register. A variable is used to
+		determine which digit to display when the ISR is called.
+		\figref{twoDigitIfc} shows an overview of the display system.
+
+		\subsection{Two Digit Multiplexing}
+		To display a two digit number a multiplexing method is used. This is done by
+		alternatively toggling each digit on the display so that only one digit is
+		on for a given time period. When the digits are alternatively toggled at a
+		frequency larger than 10kHz they appear as if they are displaying
+		simultaneously. 
+
+		The timer ISR handles the multiplexing of the two digits. Below is the
+		process used in the timer ISR to perform two digit multiplexing: 
+
+		\begin{enumerate}
+			\item Turn currently displayed digit off.
+			\item Select other digit to display using the digit selection variable.
+			\item Turn selected digit on using the corresponding index variable.
+		\end{enumerate}
+
+	\section{ADC to Temperature Conversion}
 	The Atmega328p has a ten bit successive approximation analog to digital
 	converter (noted as ADC). Successive approximation is an analog to digital
 	conversion method in which the input signal is constantly compared to the
-	output of a guessed analog value (which is stored digitally in an n-bit
-	register and is then converted to an analog signal using a digital to analog
-	converter). After all n bits of the converter are set the ADC raises a
-	conversion completion interrupt flag. It is then that the ADC Interrupt
-	Service Routine (or ADC ISR) is called to handle temperature conversion (see
-	the ADC to Temperature Conversion section below). See \figref{adcSA} for the
-	basics of successive approximation.
-
+	output of a guessed analog value. (see \figref{adcSA} for a simplified flow
+	diagram of a successive approximation ADC.). After all n bits of the converter
+	are set the ADC raises a conversion the ADC interrupt service routine (or ADC
+	ISR) is called to handle temperature conversion (see the ADC to Temperature
+	Conversion section below). 
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=\linewidth]{adc.jpg}
+		\end{center}
+		\caption{ADC Successive Approximation}
+		\label{fig:adcSA}
+	\end{figure}
+	
+		\subsection{Obtaining the ADC Conversion Result}
 		\begin{figure}[H]
 			\begin{center}
-				\includegraphics[width=\linewidth]{adc.jpg}
+				\includegraphics[width=\linewidth]{adcFlow.jpg}
 			\end{center}
-			\caption{ADC Successive Approximation}
-			\label{fig:adcSA}
+			\caption{Temperature Conversion Interface}
+			\label{fig:tempConvIfc}
 		\end{figure}
-	
-	An eight bit timer is used to handle the temperature display. The timer was
-	configured to run at approximately fifty-two kilohertz in Clear Timer on
-	Compare mode. CTC mode is an operation mode of the timer in which the internal
-	counter is reset when the counter matches the value stored in the timer's
-	output compare register. Once the timer is reset a timer interrupt vector flag
-	is set and the timer ISR is called to handle the display (see the Two Digit
-	display section below).
 
-	\section{Two Digit Display}
-		\subsection{Single Digit Display Control}
-		The two digit seven segment display is controlled by the Atmega328p via two GPIO
-		ports. PORTD controls the digit to display and PORTC controls the digit
-		selection. An array maps the digits 0 through 9 to their respective pin
-		configuration. A given digit is displayed by setting PORTD to the respective
-		value in the digit mapping array. For example, if 3 were the digit to display
-		then PORTD is set to the value stored in the mapping array at index 3. 
+		The ADC uses two eight bit registers (called \lstinline{ADCL} and
+		\lstinline{ADCH}) to store the result from an analog to digital conversion.
+		The conversion result is obtained by fetching the \lstinline{ADCL} register
+		data first (which is required according to the Atmega328p datasheet) and
+		then the \lstinline{ADCH} register data. The final result is stored in a
+		sixteen bit integer (noted as the ADC value) which is then passed to a
+		temperature conversion function \lstinline{setTemp()}.  \figref{tempConvIfc}
+		shows the process in which the temperature conversion interface was
+		designed.
 
-		\subsection{Two Digit Display Multiplexing}
-		To display a two digit number a multiplexing method is used. PORTC on the
-		Atmega328p is used to control which digit on the seven segment display is
-		activated. When the digits are alternatively toggled at a frequency larger
-		than 10kHz they appear as if they are displaying simultaneously. The timer  
-		ISR handles the toggling of the displays of the two digits.
-
-		\subsection{Display Digit Interface}
-		The two digit number to display is stored as two variables which
-		contain the indexes to the mapping array; one index per digit. The value to
-		display can then be set by calling \lstinline{setNum()} which handles
-		storing a two digit number in the index variables. This function can be
-		called at any point in the program to set the display.
-
-	\section{ADC to Temperature Conversion}
-		\subsection{Obtaining the ADC Conversion Result (or ADC value)}
-		The ADC uses two eight bit registers to store the result from an analog to
-		digital conversion - \lstinline{ADCL} which stores the first eight bits of
-		the result and \lstinline{ADCH} which stores the final two bits of the
-		conversion result. The conversion result is obtained by fetching the
-		\lstinline{ADCL} register data first (which is required according to the
-		Atmega328p datasheet) and then the \lstinline{ADCH} data is fetched last.
-		The final result is stored in a sixteen bit integer which is then passed to
-		a temperature conversion function (see the next section). 
-
-		\subsection{Displaying the Temperature}
+		\subsection{Calculating the Temperature}
+		%TODO: finish this section
 		A function called \lstinline{setTemp()} handles the conversion of an ADC
 		value to a temperature and the display of the resulting conversion. Linear
 		interpolation is used (see the ADC to Temperature Math section of the
