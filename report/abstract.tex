@@ -9,15 +9,15 @@
 \begin{abstract}
 
 A thermometer is a device used to measure and display the temperature of an
-external environment. A typical thermometer can be created using a Atmega328p
-microcontroller, thermistor and seven segment display. The main challenge in
-this design is measuring and storing the temperature in the microcontroller. A
-ten-bit analog-to-digital converter (ADC) in the Atmega328p can be used to
-overcome this challenge. Temperature is converted to an analog voltage signal
-by the thermistor which is then converted to a binary number by the ADC and is
-stored in the Atmega328p. Linear interpolation is then performed on this number
-to obtain a temperature value which is then displayed via a two digit seven
-segment display. Testing of this method showed that the thermometer worked for
-temperatures ranging from zero to forty degrees Celsius.
+external environment. A typical thermometer can be created using an Atmega328p
+microcontroller, thermistor and seven segment display. In the design presented
+temperature is converted to an analog voltage signal by the thermistor. The
+voltage signal is then converted to a binary number by an analog to digital
+converter and is stored in the Atmega328p. Linear interpolation is then
+performed on this number to obtain a temperature value which is then displayed
+via a two digit seven segment display. The temperature conversion and display
+tasks are controlled asynchronously via two interrupt service routines.  Testing
+of this method showed that this design worked for temperatures ranging from 
+$0-40^{\circ}\mathrm{C}$.
 \end{abstract}
 

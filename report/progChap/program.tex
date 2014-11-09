@@ -5,14 +5,15 @@
 	\section{Overview}
 	The Atmega328p application program uses two processes to asynchronously
 	control the external display and temperature conversion tasks (as shown in
-	\figref{progLogic}).	Temperature calculations are handled by the ADC
+	\figref{progLogic}). Temperature calculations are handled by the ADC
 	interrupt service routine (or ADC ISR). The ADC ISR obtains the result from
-	the ADC and calls \lstinline{setTemp()} to handle temperature calculations.
-	An eight-bit timer on the Atmega328p is used to manage the seven segment
-	display.  Multiplexing is used to display a value on the and the
-	\lstinline{setNum()} function is the application interface to set the number
-	to display. 
-	
+	the ADC and gives the value to the temperature conversion interface to handle
+	temperature calculations.  The \lstinline{setNum()} function is then called to
+	set the temperature to display which is handled by the two digit display
+	interface. An eight-bit timer on the Atmega328p is used to call the timer ISR
+	which uses the data in the two digit display interface to control the seven
+	segment display.
+
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=\linewidth]{ProgramLogic}
