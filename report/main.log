@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.21)  9 NOV 2014 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.10.22)  12 NOV 2014 02:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -383,77 +383,81 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./abstract.tex [1]) (./pr
-ogChap/program.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./abstract.tex [1]) (./in
+troduction.tex)
+(./progChap/program.tex [1]
 Chapter 1.
-<./figures/ProgramLogic.jpg, id=15, 590.205pt x 200.75pt>
+<./figures/ProgramLogic.jpg, id=18, 590.205pt x 200.75pt>
 File: ./figures/ProgramLogic.jpg Graphic file (type jpg)
 
 <use ./figures/ProgramLogic.jpg>
 Package pdftex.def Info: ./figures/ProgramLogic.jpg used on input line 18.
 (pdftex.def)             Requested size: 345.0pt x 117.3479pt.
 
-<figures/progBoot.jpg, id=16, 171.64125pt x 401.5pt>
+<figures/progBoot.jpg, id=19, 171.64125pt x 401.5pt>
 File: figures/progBoot.jpg Graphic file (type jpg)
 
 <use figures/progBoot.jpg>
 Package pdftex.def Info: figures/progBoot.jpg used on input line 30.
 (pdftex.def)             Requested size: 103.50105pt x 242.10262pt.
- [1
+ [2
 
- <./figures/ProgramLogic.jpg>] [2 <./figures/progBoot.jpg>] <./figures/display.
-jpg, id=24, 523.9575pt x 429.605pt>
+ <./figures/ProgramLogic.jpg>] [3 <./figures/progBoot.jpg>] <./figures/display.
+jpg, id=27, 523.9575pt x 429.605pt>
 File: ./figures/display.jpg Graphic file (type jpg)
 
 <use ./figures/display.jpg>
 Package pdftex.def Info: ./figures/display.jpg used on input line 73.
 (pdftex.def)             Requested size: 345.0pt x 282.87808pt.
- [3 <./figures/display.jpg>]
-<./figures/adc.jpg, id=28, 490.83376pt x 227.85126pt>
+ [4 <./figures/display.jpg>]
+<./figures/adc.jpg, id=31, 490.83376pt x 227.85126pt>
 File: ./figures/adc.jpg Graphic file (type jpg)
  <use ./figures/adc.jpg>
 Package pdftex.def Info: ./figures/adc.jpg used on input line 120.
 (pdftex.def)             Requested size: 345.0pt x 160.15884pt.
 
-<./figures/adcFlow.jpg, id=29, 573.14125pt x 259.97125pt>
+<./figures/adcFlow.jpg, id=32, 573.14125pt x 259.97125pt>
 File: ./figures/adcFlow.jpg Graphic file (type jpg)
 
 <use ./figures/adcFlow.jpg>
 Package pdftex.def Info: ./figures/adcFlow.jpg used on input line 129.
 (pdftex.def)             Requested size: 345.0pt x 156.4917pt.
- [4 <./figures/adc.jpg>] (./figures/adcTempGraph.tex
+ [5 <./figures/adc.jpg>] (./figures/adcTempGraph.tex
 \plotpoint=\box33
 )
 Overfull \hbox (16.35864pt too wide) in paragraph at lines 100--174
  [] 
  []
 
-[5 <./figures/adcFlow.jpg>]) [6] (./main.aux) ) 
+[6 <./figures/adcFlow.jpg>]) (./hardChap/hardware.tex [7]
+Chapter 2.
+[8
+
+]) [9] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4417 strings out of 493108
- 59846 string characters out of 6140725
+ 4424 strings out of 493108
+ 59953 string characters out of 6140724
  168775 words of memory out of 5000000
  7799 multiletter control sequences out of 15000+600000
  12416 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,32p,243b,982s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
-b>
-Output written on main.pdf (8 pages, 251265 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (11 pages, 257166 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
