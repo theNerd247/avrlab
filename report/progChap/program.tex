@@ -107,22 +107,7 @@
 		\end{enumerate}
 
 	\section{Temperature Conversion Interface}
-	The Atmega328p has a ten bit successive approximation analog to digital
-	converter (noted as ADC). Successive approximation is an analog to digital
-	conversion method in which the input signal is constantly compared to the
-	output of a guessed analog value. (see \figref{adcSA} for a simplified flow
-	diagram of a successive approximation ADC.). After all n bits of the converter
-	are set the ADC raises a conversion the ADC interrupt service routine (or ADC
-	ISR) is called to handle temperature conversion (see the ADC to Temperature
-	Conversion section below). 
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[width=\linewidth]{adc}
-		\end{center}
-		\caption{ADC Successive Approximation}
-		\label{fig:adcSA}
-	\end{figure}
-	
+		%TODO: clean up section after removal of overview 
 		\subsection{Obtaining the ADC Conversion Result}
 		\begin{figure}[H]
 			\begin{center}
@@ -158,51 +143,5 @@
 
 		Linear interpolation was the method used to calculate temperatures based on
 		given ADC values. See the below section for details on linear interpolation.
-
-		\subsection{Linear Interpolation}
-		Linear interpolation is a method of estimating function values from a table
-		of known input and function values. The idea is that two points are chosen
-		from the table (one greater than, one less than the desired value) and a
-		linear equation is formed from those two points. Then the desired function
-		value is found by computing the formed function with a desired given input
-		value into this function.
-
-		%include graph of data
-		\begin{figure}[H]
-			\begin{center}
-				\subfile{figures/adcTempGraph.tex}
-			\end{center}
-			\caption{Sample ADC value to Temperature Linear Interpolation}
-			\label{fig:adcTempGraph}
-		\end{figure}
-
-		\figref{adcTempGraph} shows an example of a linear interpolation using ADC
-		values and their temperatures. The lines between each data point represent
-		the functions to be used for linear interpolation. Here is an example of
-		computing the temperature for the ADC value $400$.
-		
-		To perform a linear interpolation for the ADC value $400$ one
-		would find the two nearest ADC values to $400$ in the table ($(343,20)$ and
-		$(445,30)$) and create the linear function between the two. Substituting $400$ for $x$
-		gives the corresponding temperature value ($25.59^{\circ}\mathrm{C}$).
-
-		\begin{eqnarray*}
-			f(x) & = & \frac{(30-20)}{(445-343)}(x-343)+20 \\
-			& \therefore & f(400) \approx 25.59^{\circ}\mathrm{C}
-		\end{eqnarray*}
-
-		A generic equation would be:
-
-		\[
-			f(x) = \frac{(y_{2}-y_{1})}{(x_{2}-x_{1})}(x-x_{1})+y_{1}\\
-		\]
-
-		where $(x_{1,2},y_{1,2})$ are two nearest points in the table surrounding a
-		given ADC value $x_{n}$. Each line in \figref{adcTempGraph} shows the linear
-		interpolation for the corresponding table points\footnote{Note: there are no
-			interpolation lines past the end points of the table ($(241,10)$ and
-			$(938,90)$). Interpolation beyond these points can be made by continuing
-			their previous lines, however this could result in under/over
-			approximation which can be dangerous in some  applications.}.
 
 \end{document}
