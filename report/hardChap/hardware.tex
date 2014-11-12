@@ -32,9 +32,15 @@
 
 	\section{Seven-Segment Display}
 		\subsection{General I/O}
+		%TODO: explain formula a bit more 
+		%TODO: add figure for a single LED circuit
 		When a pin on the ATmega328p is set high, it will supply 5 volts on that pin. To power an
 		LED as common anode, the forward voltage drop and the operating current must be known.
-		The value of the resistor in series with the LED then becomes: \[(5 - V_f)/I_f\]
+		The value of the resistor in series with the LED then becomes: 
+		
+			\[
+				\frac{\left(5 - V_f\right)}{I_f}
+			\]
 		
 		The seven-segment display consistes of seven of these circuits per digit. That will be two sets
 		of seven in common anode. In common anode, all seven segments share a common 5V and setting the
