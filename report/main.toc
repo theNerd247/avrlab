@@ -6,21 +6,21 @@
 \contentsline {chapter}{\numberline {2}Hardware Setup}{5}
 \contentsline {section}{\numberline {2.1}Overview}{5}
 \contentsline {section}{\numberline {2.2}Programmer}{5}
-\contentsline {section}{\numberline {2.3}Seven-Segment Display}{5}
-\contentsline {subsection}{\numberline {2.3.1}General I/O}{5}
-\contentsline {subsection}{\numberline {2.3.2}Mapping}{5}
-\contentsline {subsection}{\numberline {2.3.3}Digit Pulsing}{6}
-\contentsline {section}{\numberline {2.4}ADC}{6}
-\contentsline {section}{\numberline {2.5}Thermistor}{6}
-\contentsline {chapter}{\numberline {3}Program Logic}{7}
-\contentsline {section}{\numberline {3.1}Overview}{7}
-\contentsline {section}{\numberline {3.2}Configuration}{7}
-\contentsline {subsection}{\numberline {3.2.1}Timer Configuration}{8}
-\contentsline {subsection}{\numberline {3.2.2}ADC Configuration}{8}
-\contentsline {subsection}{\numberline {3.2.3}IO Register Configuration}{8}
-\contentsline {section}{\numberline {3.3}Two Digit Display Interface}{9}
-\contentsline {subsection}{\numberline {3.3.1}Single Digit Control}{9}
-\contentsline {subsection}{\numberline {3.3.2}Two Digit Multiplexing}{10}
-\contentsline {section}{\numberline {3.4}Temperature Conversion Interface}{10}
-\contentsline {subsection}{\numberline {3.4.1}Obtaining the ADC Conversion Result}{10}
-\contentsline {subsection}{\numberline {3.4.2}Calculating the Temperature}{11}
+\contentsline {section}{\numberline {2.3}Seven-Segment Display}{6}
+\contentsline {subsection}{\numberline {2.3.1}General I/O}{6}
+\contentsline {subsection}{\numberline {2.3.2}Mapping}{6}
+\contentsline {subsection}{\numberline {2.3.3}Digit Pulsing}{7}
+\contentsline {section}{\numberline {2.4}ADC}{8}
+\contentsline {section}{\numberline {2.5}Thermistor}{8}
+\contentsline {chapter}{\numberline {3}Program Logic}{10}
+\contentsline {section}{\numberline {3.1}Overview}{10}
+\contentsline {section}{\numberline {3.2}Configuration}{10}
+\contentsline {subsection}{\numberline {3.2.1}Timer Configuration}{11}
+\contentsline {subsection}{\numberline {3.2.2}ADC Configuration}{11}
+\contentsline {subsection}{\numberline {3.2.3}IO Register Configuration}{11}
+\contentsline {section}{\numberline {3.3}Two Digit Display Interface}{12}
+\contentsline {subsection}{\numberline {3.3.1}Single Digit Control}{12}
+\contentsline {subsection}{\numberline {3.3.2}Two Digit Multiplexing}{13}
+\contentsline {section}{\numberline {3.4}Temperature Conversion Interface}{13}
+\contentsline {subsection}{\numberline {3.4.1}Obtaining the ADC Conversion Result}{13}
+\contentsline {subsection}{\numberline {3.4.2}Calculating the Temperature}{14}
