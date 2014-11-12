@@ -1,2 +1,5 @@
 asn3/*
 *.sw*
+*.pdf
+*.log
+*.aux

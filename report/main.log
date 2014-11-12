@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.21)  12 NOV 2014 13:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.21)  12 NOV 2014 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -162,40 +162,31 @@ Package refstyle Info: \Fnrangeref created on input line 568.
 Package refstyle Info: \fnpageref created on input line 568.
 ))
 Package refstyle Info: Reference template \newref{fig} redefined on input line 
-16.
-Package refstyle Info: \figkey created on input line 16.
-Package refstyle Info: \figlabel created on input line 16.
-Package refstyle Info: \figref created on input line 16.
-Package refstyle Info: \Figref created on input line 16.
-Package refstyle Info: \figrangeref created on input line 16.
-Package refstyle Info: \Figrangeref created on input line 16.
-Package refstyle Info: \figpageref created on input line 16.
+18.
+Package refstyle Info: \figkey created on input line 18.
+Package refstyle Info: \figlabel created on input line 18.
+Package refstyle Info: \figref created on input line 18.
+Package refstyle Info: \Figref created on input line 18.
+Package refstyle Info: \figrangeref created on input line 18.
+Package refstyle Info: \Figrangeref created on input line 18.
+Package refstyle Info: \figpageref created on input line 18.
 Package refstyle Info: Reference template \newref{tab} redefined on input line 
-17.
-Package refstyle Info: \tabkey created on input line 17.
-Package refstyle Info: \tablabel created on input line 17.
-Package refstyle Info: \tabref created on input line 17.
-Package refstyle Info: \Tabref created on input line 17.
-Package refstyle Info: \tabrangeref created on input line 17.
-Package refstyle Info: \Tabrangeref created on input line 17.
-Package refstyle Info: \tabpageref created on input line 17.
-Package refstyle Info: New reference template \newref{gph} on input line 18.
-Package refstyle Info: \gphkey created on input line 18.
-Package refstyle Info: \gphlabel created on input line 18.
-Package refstyle Info: \gphref created on input line 18.
-Package refstyle Info: \Gphref created on input line 18.
-Package refstyle Info: \gphrangeref created on input line 18.
-Package refstyle Info: \Gphrangeref created on input line 18.
-Package refstyle Info: \gphpageref created on input line 18.
-Package refstyle Info: Reference template \newref{sec} redefined on input line 
 19.
-Package refstyle Info: \seckey created on input line 19.
-Package refstyle Info: \seclabel created on input line 19.
-Package refstyle Info: \secref created on input line 19.
-Package refstyle Info: \Secref created on input line 19.
-Package refstyle Info: \secrangeref created on input line 19.
-Package refstyle Info: \Secrangeref created on input line 19.
-Package refstyle Info: \secpageref created on input line 19.
+Package refstyle Info: \tabkey created on input line 19.
+Package refstyle Info: \tablabel created on input line 19.
+Package refstyle Info: \tabref created on input line 19.
+Package refstyle Info: \Tabref created on input line 19.
+Package refstyle Info: \tabrangeref created on input line 19.
+Package refstyle Info: \Tabrangeref created on input line 19.
+Package refstyle Info: \tabpageref created on input line 19.
+Package refstyle Info: New reference template \newref{gph} on input line 20.
+Package refstyle Info: \gphkey created on input line 20.
+Package refstyle Info: \gphlabel created on input line 20.
+Package refstyle Info: \gphref created on input line 20.
+Package refstyle Info: \Gphref created on input line 20.
+Package refstyle Info: \gphrangeref created on input line 20.
+Package refstyle Info: \Gphrangeref created on input line 20.
+Package refstyle Info: \gphpageref created on input line 20.
 
 (/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2014/05/13 v2.10 `tabularx' package (DPC)
@@ -303,56 +294,36 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/share/texmf-dist/tex/latex/csvsimple/csvsimple.sty
-Package: csvsimple 2014/07/14 version 1.12 LaTeX CSV file processing
-
-(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks27
-\pgfkeys@temptoks=\toks28
-
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks29
-)))
-(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\csv@file=\read2
-\c@csvinputline=\count115
-\c@csvrow=\count116
-\c@csvcol=\count117
-\csv@out=\write3
-) (./main.aux)
+)) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-\c@lstlisting=\count118
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+\c@lstlisting=\count115
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
+\scratchcounter=\count116
 \scratchdimen=\dimen138
 \scratchbox=\box32
-\nofMPsegments=\count120
-\nofMParguments=\count121
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count122
+\nofMPsegments=\count117
+\nofMParguments=\count118
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count119
 \MPscratchDim=\dimen139
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
-\everyMPtoPDFconversion=\toks31
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
+\everyMPtoPDFconversion=\toks28
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -401,110 +372,133 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc)
-\tf@toc=\write4
-\openout4 = `main.toc'.
-
- (./abstract.tex [1
-
-] [1])
-(./introduction.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./abstract.tex [1]) (./in
+troduction.tex)
+(./progChap/program.tex [1]
 Chapter 1.
-<./figures/adc.jpg, id=19, 490.83376pt x 227.85126pt>
-File: ./figures/adc.jpg Graphic file (type jpg)
- <use ./figures/adc.jpg>
-Package pdftex.def Info: ./figures/adc.jpg used on input line 20.
-(pdftex.def)             Requested size: 345.0pt x 160.15884pt.
-
-[1
-
- <./figures/adc.jpg>]
-<./figures/thermParallel.png, id=23, 200.75pt x 453.695pt>
-File: ./figures/thermParallel.png Graphic file (type png)
-
-<use ./figures/thermParallel.png>
-Package pdftex.def Info: ./figures/thermParallel.png used on input line 42.
-(pdftex.def)             Requested size: 86.25pt x 194.92581pt.
- [2 <./figures/thermParallel.png (PNG copy)>]
-(./figures/adcTempGraph.tex
-\plotpoint=\box33
-)
-Overfull \hbox (16.35864pt too wide) in paragraph at lines 100--93
- [] 
- []
-
-[3]) (./hardChap/hardware.tex [4]
-Chapter 2.
-[5
-
-]) (./progChap/program.tex [6]
-Chapter 3.
-<./figures/ProgramLogic.jpg, id=47, 590.205pt x 200.75pt>
+<./figures/ProgramLogic.jpg, id=18, 590.205pt x 200.75pt>
 File: ./figures/ProgramLogic.jpg Graphic file (type jpg)
 
 <use ./figures/ProgramLogic.jpg>
 Package pdftex.def Info: ./figures/ProgramLogic.jpg used on input line 18.
 (pdftex.def)             Requested size: 345.0pt x 117.3479pt.
 
-<figures/progBoot.jpg, id=48, 171.64125pt x 401.5pt>
+<figures/progBoot.jpg, id=19, 171.64125pt x 401.5pt>
 File: figures/progBoot.jpg Graphic file (type jpg)
 
 <use figures/progBoot.jpg>
 Package pdftex.def Info: figures/progBoot.jpg used on input line 30.
 (pdftex.def)             Requested size: 103.50105pt x 242.10262pt.
- [7
+ [2
 
- <./figures/ProgramLogic.jpg>] [8 <./figures/progBoot.jpg>] <./figures/display.
-jpg, id=55, 523.9575pt x 429.605pt>
+ <./figures/ProgramLogic.jpg>] [3 <./figures/progBoot.jpg>] <./figures/display.
+jpg, id=27, 523.9575pt x 429.605pt>
 File: ./figures/display.jpg Graphic file (type jpg)
 
 <use ./figures/display.jpg>
 Package pdftex.def Info: ./figures/display.jpg used on input line 73.
 (pdftex.def)             Requested size: 345.0pt x 282.87808pt.
- [9 <./figures/display.jpg>]
-<./figures/adcFlow.jpg, id=59, 573.14125pt x 259.97125pt>
+ [4 <./figures/display.jpg>]
+<./figures/adc.jpg, id=31, 490.83376pt x 227.85126pt>
+File: ./figures/adc.jpg Graphic file (type jpg)
+ <use ./figures/adc.jpg>
+Package pdftex.def Info: ./figures/adc.jpg used on input line 120.
+(pdftex.def)             Requested size: 345.0pt x 160.15884pt.
+
+<./figures/adcFlow.jpg, id=32, 573.14125pt x 259.97125pt>
 File: ./figures/adcFlow.jpg Graphic file (type jpg)
 
 <use ./figures/adcFlow.jpg>
-Package pdftex.def Info: ./figures/adcFlow.jpg used on input line 114.
+Package pdftex.def Info: ./figures/adcFlow.jpg used on input line 129.
 (pdftex.def)             Requested size: 345.0pt x 156.4917pt.
- [10 <./figures/adcFlow.jpg>]) [11] (./main.aux) ) 
+ [5 <./figures/adc.jpg>] (./figures/adcTempGraph.tex
+\plotpoint=\box33
+)
+Overfull \hbox (16.35864pt too wide) in paragraph at lines 100--174
+ [] 
+ []
+
+[6 <./figures/adcFlow.jpg>]) (./hardChap/hardware.tex [7]
+Chapter 2.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
+(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+
+<./figures/programmer.png, id=50, 803.0pt x 401.5pt>
+File: ./figures/programmer.png Graphic file (type png)
+
+<use ./figures/programmer.png>
+Package pdftex.def Info: ./figures/programmer.png used on input line 26.
+(pdftex.def)             Requested size: 345.0pt x 172.50072pt.
+ [8
+
+]
+<./figures/ssd.png, id=55, 432.86719pt x 308.65312pt>
+File: ./figures/ssd.png Graphic file (type png)
+ <use ./figures/ssd.png>
+Package pdftex.def Info: ./figures/ssd.png used on input line 51.
+(pdftex.def)             Requested size: 345.0pt x 246.00914pt.
+
+[9 <./figures/programmer.png>]
+<./figures/pulsing.png, id=60, 803.0pt x 401.5pt>
+File: ./figures/pulsing.png Graphic file (type png)
+ <use ./figures/pulsing.png>
+Package pdftex.def Info: ./figures/pulsing.png used on input line 65.
+(pdftex.def)             Requested size: 345.0pt x 172.50072pt.
+
+[10 <./figures/ssd.png>] <./figures/adcPower.png, id=64, 803.0pt x 401.5pt>
+File: ./figures/adcPower.png Graphic file (type png)
+
+<use ./figures/adcPower.png>
+Package pdftex.def Info: ./figures/adcPower.png used on input line 77.
+(pdftex.def)             Requested size: 345.0pt x 172.50072pt.
+
+<./figures/thermistor.png, id=65, 803.0pt x 401.5pt>
+File: ./figures/thermistor.png Graphic file (type png)
+
+<use ./figures/thermistor.png>
+Package pdftex.def Info: ./figures/thermistor.png used on input line 89.
+(pdftex.def)             Requested size: 345.0pt x 172.50072pt.
+ [11 <./figures/pulsing.png> <./figures/adcPower.png>]) [12 <./figures/thermist
+or.png>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 5365 strings out of 493108
- 84347 string characters out of 6140725
- 191562 words of memory out of 5000000
- 8715 multiletter control sequences out of 15000+600000
- 12715 words of font info for 49 fonts, out of 8000000 for 9000
+ 4471 strings out of 493108
+ 60876 string characters out of 6140725
+ 168829 words of memory out of 5000000
+ 7838 multiletter control sequences out of 15000+600000
+ 12416 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,9n,46p,272b,980s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
-.pfb>
-Output written on main.pdf (14 pages, 271433 bytes).
+ 38i,9n,32p,243b,982s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (14 pages, 357226 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 121 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
