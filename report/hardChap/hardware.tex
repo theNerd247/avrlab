@@ -20,36 +20,52 @@
 	To program a microcontroller, a programmer will be needed. The programmer used in this report
 	will be the Dragon. Setting up the Dragon requires a USB connection to the computer where
 	the program will be uploaded from and wiring the programmer pins to microcontroller pins
-	as shown in Figure 2.1.
+	as shown in \figref{programmer}.
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=\linewidth]{programmer}
 		\end{center}
 		\caption{Dragon Header Wiring}
-		\label{fig:prog}
+		\label{fig:programmer}
 	\end{figure}	
 
 
 	\section{Seven-Segment Display}
 		\subsection{General I/O}
-		%TODO: explain formula a bit more 
-		%TODO: add figure for a single LED circuit
 		When a pin on the ATmega328p is set high, it will supply 5 volts on that pin. To power an
-		LED as common anode, the forward voltage drop and the operating current must be known.
-		The value of the resistor in series with the LED then becomes: 
+		LED as common anode, the forward voltage drop, V$_{\text{f}}$ and the operating current,
+		I$_{\text{f}}$ must be known and can both be found in the component's datasheet. \figref{led}
+		shows the common anode setup being discussed. The value of the resistor in series with the
+		LED can be found using ohm's law: 
 		
 			\[
-				\frac{\left(5 - V_f\right)}{I_f}
+				R = \frac{\left(V_{cc} - V_f\right)}{I_f}
+			\]
+		
+		For the display used in this report: V$_{\text{f}}$ is 2.0V, I$_{\text{f}}$ is 20mA, and 
+		V$_{\text{cc}}$ is 5V.
+		
+		
+			\[
+				R = \frac{\left(5V - 2.0V\right)}{20mA} = 150 \Omega
 			\]
 		
 		The seven-segment display consistes of seven of these circuits per digit. That will be two sets
-		of seven in common anode. In common anode, all seven segments share a common 5V and setting the
-		pin that matches the segment low will turn the LED on, sinking current into the ATmega.
-		
+		of seven, 14 resistors and 14 ATmega pins. In common anode, all seven segments share a common 
+		5V connection, and setting the pin that matches the segment low will turn the LED on, sinking
+		current into the ATmega.
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[width=3in]{singleLED}
+			\end{center}
+			\caption{Typical Common Anode LED Setup}
+			\label{fig:led}
+		\end{figure}
+				
 		
 		\subsection{Mapping}
 		Having the display show a number requires powering the segments that correspond to that digit.
-		The pin layout for the seven-segment display used in this report is shown in Figure 2.2.
+		The pin layout for the seven-segment display used in this report is shown in \figref{seven}.
 		So to display the number 4 on the left digit, pin 4 must be high for common anode and pins
 		14, 13, 16, and 1 must be low while the rest are high.
 		\begin{figure}[H]
@@ -57,7 +73,7 @@
 				\includegraphics[width=\linewidth]{ssd}
 			\end{center}
 			\caption{Seven-segment Display Pin Layout}
-			\label{fig:sevenSegment}
+			\label{fig:seven}
 		\end{figure}
 		
 		\subsection{Digit Pulsing}
@@ -65,7 +81,7 @@
 		segment for both digits, but by alternating which digit is powered after every few clock cycles,
 		the number of pins can be reduced to 9 (7 for the segments, and 2 for turning the digits on/off
 		via the common anode pins). Because of the speed at which the ATmega328p alternates the digits,
-		both digits will appear to be lit simultaneously. The new circuit is shown in Figure 2.3.
+		both digits will appear to be lit simultaneously. The new circuit is shown in \figref{pulse}.
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=\linewidth]{pulsing}
@@ -76,7 +92,7 @@
 		
 	\section{ADC}
 	The ADC module of the ATmega328p is powered by three seperate pins (20, 21, 22). The circuit for
-	these pins is shown in Figure 2.4. This setup connects the reference Voltage externally to 
+	these pins is shown in \figref{adcPwr}. This setup connects the reference Voltage externally to 
 	VCC while also reducing noise that may interfere with the measurements.
 	\begin{figure}[H]
 		\begin{center}
@@ -88,7 +104,7 @@
 
 	\section{Thermistor}
 	The ADC module reads from a pin determined in the program. In this report ADC5 (pin 28) is used
-	with the thermistor setup shown in Figure 2.5. The ADC measures the varying voltage drop
+	with the thermistor setup shown in \figref{therm}. The ADC measures the varying voltage drop
 	across the thermistor and the program will then match that to its corresponding temperature.
 	
 	\begin{figure}[H]

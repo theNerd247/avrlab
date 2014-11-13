@@ -8,10 +8,10 @@
 \contentsline {section}{\numberline {2.2}Programmer}{5}
 \contentsline {section}{\numberline {2.3}Seven-Segment Display}{6}
 \contentsline {subsection}{\numberline {2.3.1}General I/O}{6}
-\contentsline {subsection}{\numberline {2.3.2}Mapping}{6}
-\contentsline {subsection}{\numberline {2.3.3}Digit Pulsing}{7}
+\contentsline {subsection}{\numberline {2.3.2}Mapping}{7}
+\contentsline {subsection}{\numberline {2.3.3}Digit Pulsing}{8}
 \contentsline {section}{\numberline {2.4}ADC}{8}
-\contentsline {section}{\numberline {2.5}Thermistor}{8}
+\contentsline {section}{\numberline {2.5}Thermistor}{9}
 \contentsline {chapter}{\numberline {3}Program Logic}{10}
 \contentsline {section}{\numberline {3.1}Overview}{10}
 \contentsline {section}{\numberline {3.2}Configuration}{10}
