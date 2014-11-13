@@ -1,0 +1,209 @@
+\hypertarget{lab5_8c}{\section{lab5.\+c File Reference}
+\label{lab5_8c}\index{lab5.\+c@{lab5.\+c}}
+}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\\*
+{\ttfamily \#include $<$util/delay.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdigit__cfg__t}{digit\+\_\+cfg\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{lab5_8c_aadace503d5c098628ee36390eb864648}{D\+G\+O\+U\+T\+P\+O\+R\+T}~P\+O\+R\+T\+D
+\item 
+\#define \hyperlink{lab5_8c_a5417d7cb6872e24b06fa5801c89da28d}{D\+G\+S\+E\+L\+P\+O\+R\+T}~P\+O\+R\+T\+C
+\item 
+\#define \hyperlink{lab5_8c_a927ad5268e074a39ee21b07f7376fc8f}{S\+E\+T\+D\+G}(v)~\hyperlink{lab5_8c_aadace503d5c098628ee36390eb864648}{D\+G\+O\+U\+T\+P\+O\+R\+T} = $\sim$(nums\mbox{[}v\mbox{]})
+\item 
+\#define \hyperlink{lab5_8c_a5b47dfe2cf848ac7ae36b2af945d0926}{D\+G\+S\+E\+L}(v)~\hyperlink{lab5_8c_a5417d7cb6872e24b06fa5801c89da28d}{D\+G\+S\+E\+L\+P\+O\+R\+T} = digits\mbox{[}v\mbox{]}
+\item 
+\#define \hyperlink{lab5_8c_addc9cb692299e0e75869ffd3a5bfe4a6}{D\+G1}~1
+\item 
+\hypertarget{lab5_8c_a91bb896acf74c57bf04774b2c845b60b}{\#define {\bfseries D\+G2}~0}\label{lab5_8c_a91bb896acf74c57bf04774b2c845b60b}
+
+\item 
+\hypertarget{lab5_8c_affc9cbf86b78292bdb405361761c47f5}{\#define {\bfseries U}~temp\+Data\mbox{[}ind\mbox{]}}\label{lab5_8c_affc9cbf86b78292bdb405361761c47f5}
+
+\item 
+\hypertarget{lab5_8c_aa73214aa5f2f94f63d90bb4e3d99fe53}{\#define {\bfseries L}~temp\+Data\mbox{[}ind-\/1\mbox{]}}\label{lab5_8c_aa73214aa5f2f94f63d90bb4e3d99fe53}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{lab5_8c_ae0051762a32e737bb070fd5c71e95956}{set\+Num} (uint8\+\_\+t num)
+\begin{DoxyCompactList}\small\item\em sets the iopins for the 7\+S\+E\+G display \end{DoxyCompactList}\item 
+void \hyperlink{lab5_8c_a09f26a76fcff275e0295f359b709e318}{set\+Temp} (uint16\+\_\+t raw)
+\begin{DoxyCompactList}\small\item\em gets the input temperature from the adc value \end{DoxyCompactList}\item 
+\hyperlink{lab5_8c_a5686c229bdef50123688ab6cb1404230}{I\+S\+R} (T\+I\+M\+E\+R2\+\_\+\+C\+O\+M\+P\+A\+\_\+vect)
+\begin{DoxyCompactList}\small\item\em clock interupt service routine \end{DoxyCompactList}\item 
+\hypertarget{lab5_8c_a05c2e5b588ced1cd7312f5b0edc5b295}{{\bfseries I\+S\+R} (A\+D\+C\+\_\+vect)}\label{lab5_8c_a05c2e5b588ced1cd7312f5b0edc5b295}
+
+\item 
+void \hyperlink{lab5_8c_abe1f2834e17d52563241aca6279e80c9}{setupclk} (void)
+\begin{DoxyCompactList}\small\item\em sets up the timer \end{DoxyCompactList}\item 
+void \hyperlink{lab5_8c_a1b915cfe619f05d139e00b7e55fd3482}{setupadc} (void)
+\begin{DoxyCompactList}\small\item\em port configuration for the A\+D\+C \end{DoxyCompactList}\item 
+\hypertarget{lab5_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{int {\bfseries main} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})}\label{lab5_8c_abf9e6b7e6f15df4b525a2e7705ba3089}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{lab5_8c_a397287c43d6d3119292b48b0b3450395}{const unsigned char {\bfseries nums} \mbox{[}10\mbox{]} = \{0x77,0x24,0x5d,0x6d,0x2e,0x6b,0x7b,0x25,0x7f,0x6f\}}\label{lab5_8c_a397287c43d6d3119292b48b0b3450395}
+
+\item 
+\hypertarget{lab5_8c_aa03211e0c6d29649f1f1327672bb1f54}{const unsigned char {\bfseries digits} \mbox{[}2\mbox{]} = \{\+\_\+\+B\+V(0),\+\_\+\+B\+V(1)\}}\label{lab5_8c_aa03211e0c6d29649f1f1327672bb1f54}
+
+\item 
+\hypertarget{lab5_8c_a093b691ee5588fc83698a5cec0693227}{\hyperlink{structdigit__cfg__t}{digit\+\_\+cfg\+\_\+t} {\bfseries digit\+\_\+cfg}}\label{lab5_8c_a093b691ee5588fc83698a5cec0693227}
+
+\item 
+\hypertarget{lab5_8c_adc8f01a3ab60fce50bb34df11fab128e}{uint16\+\_\+t {\bfseries adc}}\label{lab5_8c_adc8f01a3ab60fce50bb34df11fab128e}
+
+\item 
+\hypertarget{lab5_8c_acff353f839bf5126504e453ad481d099}{uint8\+\_\+t {\bfseries ind} = 0}\label{lab5_8c_acff353f839bf5126504e453ad481d099}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+V\+R A\+Tmega328p thermometer source code
+
+\begin{DoxyAuthor}{Author}
+Noah Harvey (\href{mailto:nharvey@spsu.edu}{\tt nharvey@spsu.\+edu}) 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+G\+N\+U Public License 2 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{lab5_8c_addc9cb692299e0e75869ffd3a5bfe4a6}{\index{lab5.\+c@{lab5.\+c}!D\+G1@{D\+G1}}
+\index{D\+G1@{D\+G1}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{D\+G1}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+G1~1}}\label{lab5_8c_addc9cb692299e0e75869ffd3a5bfe4a6}
+the digit to digits\mbox{[}\mbox{]} index mapping \hypertarget{lab5_8c_aadace503d5c098628ee36390eb864648}{\index{lab5.\+c@{lab5.\+c}!D\+G\+O\+U\+T\+P\+O\+R\+T@{D\+G\+O\+U\+T\+P\+O\+R\+T}}
+\index{D\+G\+O\+U\+T\+P\+O\+R\+T@{D\+G\+O\+U\+T\+P\+O\+R\+T}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{D\+G\+O\+U\+T\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+G\+O\+U\+T\+P\+O\+R\+T~P\+O\+R\+T\+D}}\label{lab5_8c_aadace503d5c098628ee36390eb864648}
+the digit value port to use \hypertarget{lab5_8c_a5b47dfe2cf848ac7ae36b2af945d0926}{\index{lab5.\+c@{lab5.\+c}!D\+G\+S\+E\+L@{D\+G\+S\+E\+L}}
+\index{D\+G\+S\+E\+L@{D\+G\+S\+E\+L}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{D\+G\+S\+E\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+G\+S\+E\+L(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~{\bf D\+G\+S\+E\+L\+P\+O\+R\+T} = digits\mbox{[}v\mbox{]}}}\label{lab5_8c_a5b47dfe2cf848ac7ae36b2af945d0926}
+turns on the requested digit \hypertarget{lab5_8c_a5417d7cb6872e24b06fa5801c89da28d}{\index{lab5.\+c@{lab5.\+c}!D\+G\+S\+E\+L\+P\+O\+R\+T@{D\+G\+S\+E\+L\+P\+O\+R\+T}}
+\index{D\+G\+S\+E\+L\+P\+O\+R\+T@{D\+G\+S\+E\+L\+P\+O\+R\+T}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{D\+G\+S\+E\+L\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+G\+S\+E\+L\+P\+O\+R\+T~P\+O\+R\+T\+C}}\label{lab5_8c_a5417d7cb6872e24b06fa5801c89da28d}
+the digit selection port to use \hypertarget{lab5_8c_a927ad5268e074a39ee21b07f7376fc8f}{\index{lab5.\+c@{lab5.\+c}!S\+E\+T\+D\+G@{S\+E\+T\+D\+G}}
+\index{S\+E\+T\+D\+G@{S\+E\+T\+D\+G}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{S\+E\+T\+D\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+D\+G(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~{\bf D\+G\+O\+U\+T\+P\+O\+R\+T} = $\sim$(nums\mbox{[}v\mbox{]})}}\label{lab5_8c_a927ad5268e074a39ee21b07f7376fc8f}
+sets the 7\+S\+E\+G display digit value 
+
+\subsection{Function Documentation}
+\hypertarget{lab5_8c_a5686c229bdef50123688ab6cb1404230}{\index{lab5.\+c@{lab5.\+c}!I\+S\+R@{I\+S\+R}}
+\index{I\+S\+R@{I\+S\+R}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{I\+S\+R}]{\setlength{\rightskip}{0pt plus 5cm}I\+S\+R (
+\begin{DoxyParamCaption}
+\item[{T\+I\+M\+E\+R2\+\_\+\+C\+O\+M\+P\+A\+\_\+vect}]{}
+\end{DoxyParamCaption}
+)}}\label{lab5_8c_a5686c229bdef50123688ab6cb1404230}
+
+
+clock interupt service routine 
+
+the digits to multiplex are
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{lab5_8c_ae0051762a32e737bb070fd5c71e95956}{\index{lab5.\+c@{lab5.\+c}!set\+Num@{set\+Num}}
+\index{set\+Num@{set\+Num}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{set\+Num}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Num (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}}\label{lab5_8c_ae0051762a32e737bb070fd5c71e95956}
+
+
+sets the iopins for the 7\+S\+E\+G display 
+
+the A\+D\+C output value 
+\begin{DoxyParams}{Parameters}
+{\em num} & -\/ the number to output (between 0 and 99)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{lab5_8c_a09f26a76fcff275e0295f359b709e318}{\index{lab5.\+c@{lab5.\+c}!set\+Temp@{set\+Temp}}
+\index{set\+Temp@{set\+Temp}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{set\+Temp}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Temp (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{raw}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{lab5_8c_a09f26a76fcff275e0295f359b709e318}
+
+
+gets the input temperature from the adc value 
+
+raw is linearly interpollated via the below table\+: {\bfseries N\+O\+T\+E\+:} This function is an inline function and is meant to be used in an I\+S\+R
+
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}{\bf A\+D\+C }&{\bf Temp (degrees C)  }\\\cline{1-2}
+241 &10 \\\cline{1-2}
+343 &20 \\\cline{1-2}
+445 &30 \\\cline{1-2}
+567 &40 \\\cline{1-2}
+668 &50 \\\cline{1-2}
+753 &60 \\\cline{1-2}
+871 &70 \\\cline{1-2}
+910 &80 \\\cline{1-2}
+938 &90 \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em raw} & -\/ the raw A\+D\+C value (should be read directly from the A\+D\+C\+H/\+L registers)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{lab5_8c_a1b915cfe619f05d139e00b7e55fd3482}{\index{lab5.\+c@{lab5.\+c}!setupadc@{setupadc}}
+\index{setupadc@{setupadc}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{setupadc}]{\setlength{\rightskip}{0pt plus 5cm}void setupadc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{lab5_8c_a1b915cfe619f05d139e00b7e55fd3482}
+
+
+port configuration for the A\+D\+C 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{lab5_8c_abe1f2834e17d52563241aca6279e80c9}{\index{lab5.\+c@{lab5.\+c}!setupclk@{setupclk}}
+\index{setupclk@{setupclk}!lab5.\+c@{lab5.\+c}}
+\subsubsection[{setupclk}]{\setlength{\rightskip}{0pt plus 5cm}void setupclk (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{lab5_8c_abe1f2834e17d52563241aca6279e80c9}
+
+
+sets up the timer 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

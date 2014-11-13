@@ -1,3 +1,29 @@
+/*
+ * lab5.c is part of avrlab.
+ * 
+ * avrlab is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * avrlab is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with avrlab.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * @file lab5.c 
+ *
+ * AVR ATmega328p thermometer source code
+ *
+ * @author Noah Harvey (nharvey@spsu.edu)
+ * @copyright GNU Public License 2
+ */
+
 #include <stdint.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -125,21 +151,19 @@ inline void setTemp(uint16_t raw)
  * 
  * the digits to multiplex are 
  *
- * void
  * @return void
  * 
  */
-/*void clockISR(void)*/
 ISR(TIMER2_COMPA_vect)
 {
 	//quickly turn off the digits before switching 
 	DGSELPORT = 0x00;
 
-	/** switch the digit to use and set the 7SEG value */
+	/* switch the digit to use and set the 7SEG value */
 	digit_cfg.dsel ^= 1;
 	SETDG(digit_cfg.dval[digit_cfg.dsel]);
 
-	/** turn on the 7SEG digit */
+	/* turn on the 7SEG digit */
 	DGSEL((digit_cfg.dsel));
 
 	//allow more interupts
@@ -148,7 +172,7 @@ ISR(TIMER2_COMPA_vect)
 
 ISR(ADC_vect)
 {
-	/** get ADC value*/
+	/* get ADC value*/
 	adc = ADCL;
 	adc |= (ADCH << 8);
 
@@ -158,39 +182,44 @@ ISR(ADC_vect)
 /**
  * @brief sets up the timer
  * 
- * void
  * @return void 
  * 
  */
 void setupclk(void)
 {
-	/** disable the interrupt before config */
+	/* disable the interrupt before config */
 	BITOFF(TIMSK2,OCIE2A); 
 
-	/** set to normal operation */
+	/* set to normal operation */
 	BITOFF(TCCR2A,COM2A1);
 	BITOFF(TCCR2A,COM2A0);
 
-	/** set the operation mode to CTC */
+	/* set the operation mode to CTC */
 	BITON(TCCR2A,WGM21); 
 	BITOFF(TCCR2A,WGM20);
 
-	/** make sure we use the internal clock */
+	/* make sure we use the internal clock */
 	BITOFF(ASSR,AS2);
 
-	/** setup prescaler to 8*/
+	/* setup prescaler to 8*/
 	SETPORT(TCCR2B,0x0F, _BV(CS21));
 
-	/** set output compare */
+	/* set output compare */
 	SETPORT(OCR2A,0xFF,19);
 
-	/** set counter */
+	/* set counter */
 	SETPORT(TCNT2,0xff,0);
 
-	/** enable interrupt */
+	/* enable interrupt */
 	BITON(TIMSK2,OCIE2A);
 }
 
+/**
+ * @brief port configuration for the ADC
+ * 
+ * @return void
+ * 
+ */
 void setupadc(void)
 {
 	// Vref external

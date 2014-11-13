@@ -1,0 +1,202 @@
+.TH "lab5.c" 3 "Thu Nov 13 2014" "Version 1.0" "ATmega328p Thermometer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lab5.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdint\&.h>\fP
+.br
+\fC#include <avr/io\&.h>\fP
+.br
+\fC#include <avr/interrupt\&.h>\fP
+.br
+\fC#include <util/delay\&.h>\fP
+.br
+\fC#include 'util\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBdigit_cfg_t\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDGOUTPORT\fP   PORTD"
+.br
+.ti -1c
+.RI "#define \fBDGSELPORT\fP   PORTC"
+.br
+.ti -1c
+.RI "#define \fBSETDG\fP(v)   \fBDGOUTPORT\fP = ~(nums[v])"
+.br
+.ti -1c
+.RI "#define \fBDGSEL\fP(v)   \fBDGSELPORT\fP = digits[v]"
+.br
+.ti -1c
+.RI "#define \fBDG1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDG2\fP   0"
+.br
+.ti -1c
+.RI "#define \fBU\fP   tempData[ind]"
+.br
+.ti -1c
+.RI "#define \fBL\fP   tempData[ind-1]"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetNum\fP (uint8_t num)"
+.br
+.RI "\fIsets the iopins for the 7SEG display \fP"
+.ti -1c
+.RI "void \fBsetTemp\fP (uint16_t raw)"
+.br
+.RI "\fIgets the input temperature from the adc value \fP"
+.ti -1c
+.RI "\fBISR\fP (TIMER2_COMPA_vect)"
+.br
+.RI "\fIclock interupt service routine \fP"
+.ti -1c
+.RI "\fBISR\fP (ADC_vect)"
+.br
+.ti -1c
+.RI "void \fBsetupclk\fP (void)"
+.br
+.RI "\fIsets up the timer \fP"
+.ti -1c
+.RI "void \fBsetupadc\fP (void)"
+.br
+.RI "\fIport configuration for the ADC \fP"
+.ti -1c
+.RI "int \fBmain\fP (int argc, char const *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const unsigned char \fBnums\fP [10] = {0x77,0x24,0x5d,0x6d,0x2e,0x6b,0x7b,0x25,0x7f,0x6f}"
+.br
+.ti -1c
+.RI "const unsigned char \fBdigits\fP [2] = {_BV(0),_BV(1)}"
+.br
+.ti -1c
+.RI "\fBdigit_cfg_t\fP \fBdigit_cfg\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBadc\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBind\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+AVR ATmega328p thermometer source code
+.PP
+\fBAuthor:\fP
+.RS 4
+Noah Harvey (nharvey@spsu.edu) 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+GNU Public License 2 
+.RE
+.PP
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DG1   1"
+the digit to digits[] index mapping 
+.SS "#define DGOUTPORT   PORTD"
+the digit value port to use 
+.SS "#define DGSEL(v)   \fBDGSELPORT\fP = digits[v]"
+turns on the requested digit 
+.SS "#define DGSELPORT   PORTC"
+the digit selection port to use 
+.SS "#define SETDG(v)   \fBDGOUTPORT\fP = ~(nums[v])"
+sets the 7SEG display digit value 
+.SH "Function Documentation"
+.PP 
+.SS "ISR (TIMER2_COMPA_vect)"
+
+.PP
+clock interupt service routine the digits to multiplex are
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void setNum (uint8_tnum)"
+
+.PP
+sets the iopins for the 7SEG display the ADC output value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\fP - the number to output (between 0 and 99)
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void setTemp (uint16_traw)\fC [inline]\fP"
+
+.PP
+gets the input temperature from the adc value raw is linearly interpollated via the below table: \fBNOTE:\fP This function is an inline function and is meant to be used in an ISR
+.PP
+ADC Temp (degrees C)  241 10 343 20 445 30 567 40 668 50 753 60 871 70 910 80 938 90 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIraw\fP - the raw ADC value (should be read directly from the ADCH/L registers)
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void setupadc (void)"
+
+.PP
+port configuration for the ADC 
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void setupclk (void)"
+
+.PP
+sets up the timer 
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ATmega328p Thermometer from the source code\&.

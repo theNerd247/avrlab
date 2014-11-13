@@ -1,0 +1,42 @@
+.TH "util.h" 3 "Thu Nov 13 2014" "Version 1.0" "ATmega328p Thermometer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+util.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBITON\fP(port, pin)   port |= _BV(pin)"
+.br
+.ti -1c
+.RI "#define \fBBITOFF\fP(port, pin)   port &= ~_BV(pin)"
+.br
+.ti -1c
+.RI "#define \fBSETPORT\fP(port, mask, value)   port = ((port & ~(mask)) | value)"
+.br
+.ti -1c
+.RI "#define \fBTOGGLEBIT\fP(port, bit)   port ^= _BV(bit)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+utility macros for AVR code
+.PP
+\fBAuthor:\fP
+.RS 4
+Noah Harvey (nharvey@spsu.edu) 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+GNU Public License 2 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ATmega328p Thermometer from the source code\&.

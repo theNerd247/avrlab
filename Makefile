@@ -24,7 +24,7 @@ REQUIRED_DIRS=$(BINDIR)
 ## END DIRS ############################
 #
 ## FILES ##############################
-DOXYGEN_CONFIG_FILE=$(PREFIX)/doxygen.conf
+DOXYGEN_CONFIG_FILE=./doxygen.conf
 ## END FILES ############################
 #
 ## FLAGS ##############################
@@ -93,6 +93,7 @@ clean:
 
 doc:
 	doxygen $(DOXYGEN_CONFIG_FILE)
+	cd doc/latex/; make 
 
 flash: all
 	sudo avrdude -c dragon_isp -p $(MCUTYPE) -U flash:w:$(TARGET).hex

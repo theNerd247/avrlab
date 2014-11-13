@@ -1,0 +1,29 @@
+\hypertarget{util_8h}{\section{util.\+h File Reference}
+\label{util_8h}\index{util.\+h@{util.\+h}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{util_8h_a70f20960bac5844434fe4596f32743d5}{\#define {\bfseries B\+I\+T\+O\+N}(port, pin)~port $\vert$= \+\_\+\+B\+V(pin)}\label{util_8h_a70f20960bac5844434fe4596f32743d5}
+
+\item 
+\hypertarget{util_8h_a219c65d4f964c325f1625d02e7e4b069}{\#define {\bfseries B\+I\+T\+O\+F\+F}(port, pin)~port \&= $\sim$\+\_\+\+B\+V(pin)}\label{util_8h_a219c65d4f964c325f1625d02e7e4b069}
+
+\item 
+\hypertarget{util_8h_a3547ccbde435793bed21735739a2a305}{\#define {\bfseries S\+E\+T\+P\+O\+R\+T}(port, mask, value)~port = ((port \& $\sim$(mask)) $\vert$ value)}\label{util_8h_a3547ccbde435793bed21735739a2a305}
+
+\item 
+\hypertarget{util_8h_a0698c5edf771dcf41c87322999ff69d7}{\#define {\bfseries T\+O\+G\+G\+L\+E\+B\+I\+T}(port, bit)~port $^\wedge$= \+\_\+\+B\+V(bit)}\label{util_8h_a0698c5edf771dcf41c87322999ff69d7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+utility macros for A\+V\+R code
+
+\begin{DoxyAuthor}{Author}
+Noah Harvey (\href{mailto:nharvey@spsu.edu}{\tt nharvey@spsu.\+edu}) 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+G\+N\+U Public License 2 
+\end{DoxyCopyright}
