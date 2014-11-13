@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.10.22)  12 NOV 2014 02:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.10.22)  12 NOV 2014 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -294,7 +294,14 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (./main.aux)
+)) (./main.aux
+
+LaTeX Warning: Label `fig:whatIsThis' multiply defined.
+
+
+LaTeX Warning: Label `fig:whatIsThis' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -310,8 +317,7 @@ LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 \c@lstlisting=\count115
-
-(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count116
 \scratchdimen=\dimen138
@@ -431,33 +437,71 @@ Overfull \hbox (16.35864pt too wide) in paragraph at lines 100--174
 
 [6 <./figures/adcFlow.jpg>]) (./hardChap/hardware.tex [7]
 Chapter 2.
-[8
+<./figures/programmer.png, id=50, 803.0pt x 602.25pt>
+File: ./figures/programmer.png Graphic file (type png)
 
-]) [9] (./main.aux) ) 
+<use ./figures/programmer.png>
+Package pdftex.def Info: ./figures/programmer.png used on input line 20.
+(pdftex.def)             Requested size: 345.0pt x 258.75108pt.
+ [8
+
+]
+<./figures/mapping.png, id=54, 803.0pt x 602.25pt>
+File: ./figures/mapping.png Graphic file (type png)
+ <use ./figures/mapping.png>
+Package pdftex.def Info: ./figures/mapping.png used on input line 45.
+(pdftex.def)             Requested size: 345.0pt x 258.75108pt.
+
+[9 <./figures/programmer.png>]
+<./figures/pulsing.png, id=58, 803.0pt x 602.25pt>
+File: ./figures/pulsing.png Graphic file (type png)
+ <use ./figures/pulsing.png>
+Package pdftex.def Info: ./figures/pulsing.png used on input line 58.
+(pdftex.def)             Requested size: 345.0pt x 258.75108pt.
+
+[10 <./figures/mapping.png>]
+<./figures/adcPower.png, id=62, 803.0pt x 602.25pt>
+File: ./figures/adcPower.png Graphic file (type png)
+
+<use ./figures/adcPower.png>
+Package pdftex.def Info: ./figures/adcPower.png used on input line 69.
+(pdftex.def)             Requested size: 345.0pt x 258.75108pt.
+ [11 <./figures/pulsing.png>]
+<./figures/Thermistor.png, id=67, 803.0pt x 602.25pt>
+File: ./figures/Thermistor.png Graphic file (type png)
+
+<use ./figures/Thermistor.png>
+Package pdftex.def Info: ./figures/Thermistor.png used on input line 81.
+(pdftex.def)             Requested size: 345.0pt x 258.75108pt.
+) [12 <./figures/adcPower.png>] [13 <./figures/Thermistor.png>] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4424 strings out of 493108
- 59953 string characters out of 6140724
- 168775 words of memory out of 5000000
- 7799 multiletter control sequences out of 15000+600000
+ 4452 strings out of 493108
+ 60595 string characters out of 6140724
+ 168846 words of memory out of 5000000
+ 7822 multiletter control sequences out of 15000+600000
  12416 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,32p,243b,982s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
-10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (11 pages, 257166 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (15 pages, 353063 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
