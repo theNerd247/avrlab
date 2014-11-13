@@ -24,3 +24,4 @@
 \contentsline {section}{\numberline {3.4}Temperature Conversion Interface}{13}
 \contentsline {subsection}{\numberline {3.4.1}Obtaining the ADC Conversion Result}{13}
 \contentsline {subsection}{\numberline {3.4.2}Calculating the Temperature}{14}
+\contentsline {chapter}{\numberline {4}Testing The Thermometer}{15}
