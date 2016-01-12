@@ -19,7 +19,7 @@ set(subProjects
 	"lab5"
 	)
 
-set(styleFiles "${styDir}/labreport.sty")
+set(styleFiles "sty/lab.sty")
 
 set(includeList 
 	"${texDir}"

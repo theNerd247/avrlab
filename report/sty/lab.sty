@@ -1,11 +1,11 @@
-\ProvidesPackage{labreport}
+\ProvidesPackage{lab}
 
 % allow src code implemetation
 \usepackage{listings}
 % needed for images
 \usepackage{graphicx}
 % all images should be placed in figures/
-%\graphicspath{{./img/}}
+%\graphicspath{{./figures/}}
 % enable more control of floats
 \usepackage{float}
 % custom reference styles
@@ -14,7 +14,6 @@
 \newref{tab}{refcmd={Table~\ref{#1}}}
 \newref{gph}{refcmd={Graph~\ref{#1}}}
 \newref{sec}{refcmd={Section~\ref{#1}}}
-
 % use good tables
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -24,4 +23,4 @@
 % allow CSV processing
 \usepackage{csvsimple}
 
-
+\endinput
