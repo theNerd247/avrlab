@@ -26,6 +26,8 @@ set(includeList
 	"${styDir}"
 	"${imgDir}"
 	"plot"
+	"../lab5"
+	"../include"
 	)
 
 SetupLaTexBuildEnv (
