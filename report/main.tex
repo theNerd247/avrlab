@@ -1,41 +1,40 @@
-%        File: main.tex
-%
-\documentclass[a4paper]{report}
-% use subfiles 
+\documentclass[a4paper,titlepage]{article}
+
+%include the packages and styles to use
+%\usepackage{package_name}
 \usepackage{subfiles}
-% allow src code implemetation
-\usepackage{listings}
-% needed for images
-\usepackage{graphicx}
-% all images should be placed in figures/
-\graphicspath{{./figures/}}
-% enable more control of floats
-\usepackage{float}
-% custom reference styles
-\usepackage{refstyle}
-\newref{fig}{refcmd={Figure~\ref{#1}}}
-\newref{tab}{refcmd={Table~\ref{#1}}}
-\newref{gph}{refcmd={Graph~\ref{#1}}}
-\newref{sec}{refcmd={Section~\ref{#1}}}
-% use good tables
-\usepackage{tabularx}
-\usepackage{booktabs}
-% use math
-\usepackage{amsmath}
-\usepackage{amssymb}
-% allow CSV processing
-\usepackage{csvsimple}
+\usepackage{report}
 
 \begin{document}
-	\title{Basic Analog to Digital Thermometer using ATmega328p}
-	\author{Douglas Smith, Noah Harvey}
-	\maketitle
-	\tableofcontents
-	\subfile{abstract.tex}
-	\subfile{introduction.tex}
-	\subfile{hardChap/hardware.tex}
-	\subfile{progChap/program.tex}
-	\subfile{results.tex}
-	\subfile{appendix.tex}
-\end{document}
 
+\title{Basic Analog to Digital Thermometer using ATmega328p}
+\author{Douglas Smith, Noah Harvey}
+
+% Date is automagically included (see Latex documentation)
+\maketitle
+
+\begin{abstract}
+	A thermometer is a device used to measure and display the temperature of an
+external environment. A typical thermometer can be created using an Atmega328p
+microcontroller, thermistor and seven segment display. In the design presented
+temperature is converted to an analog voltage signal by the thermistor. The
+voltage signal is then converted to a binary number by an analog to digital
+converter and is stored in the Atmega328p. Linear interpolation is then
+performed on this number to obtain a temperature value which is then displayed
+via a two digit seven segment display. The temperature conversion and display
+tasks are controlled asynchronously via two interrupt service routines.  Testing
+of this method showed that this design worked for temperatures ranging from 
+$0-40^{\circ}\mathrm{C}$.
+
+\end{abstract}
+
+%\tableofcontents
+\pagebreak
+
+\subfile{introduction}
+\subfile{hardware}
+\subfile{program}
+\subfile{results}
+%\subfile{appendix}
+
+\end{document}

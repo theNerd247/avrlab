@@ -1,5 +1,5 @@
 set terminal latex
-set output './report/figures/adcTempGraph.tex'
+set output 'adcTempGraph.tex'
 set xlabel 'ADC Value'
 set xrange [0:950]
 set ylabel '\rotatebox{90}{Temperature ($^{\circ}\mathrm{C}$)}' 

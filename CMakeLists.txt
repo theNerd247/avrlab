@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 #acknowledge policy push/pop
 cmake_policy(SET CMP0011 NEW) 
 
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modulartex/cmake")
 
 include(LaTeXBuild)
 include(FindLATEX)
@@ -11,6 +11,10 @@ project("avrlab")
 
 # list of projects to build
 set(projects 
+	"lab2"
+	"lab3"
+	"lab4"
+	"lab5"
 	"report"
 	)
 
