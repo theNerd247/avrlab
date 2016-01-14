@@ -1,0 +1,3 @@
+[submodule "cmake/modulartex"]
+	path = cmake/modulartex
+	url = https://github.com/theNerd247/modulartex.git
